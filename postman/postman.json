@@ -7,7 +7,7 @@
 	"item": [
 		{
 			"name": "Get Detailed Flight Plan",
-			"_postman_id": "4e230b7f-9837-4b41-b22c-f7a166de50c8",
+			"id": "4e230b7f-9837-4b41-b22c-f7a166de50c8",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -26,7 +26,7 @@
 		},
 		{
 			"name": "Get User Flights",
-			"_postman_id": "073134c1-50a2-46d5-afa0-87c36a77e11e",
+			"id": "073134c1-50a2-46d5-afa0-87c36a77e11e",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -66,7 +66,7 @@
 		},
 		{
 			"name": "Get All Aircraft Liveries",
-			"_postman_id": "c1d0db1c-3bfd-4c02-95a2-333e4a35dc86",
+			"id": "c1d0db1c-3bfd-4c02-95a2-333e4a35dc86",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -85,7 +85,7 @@
 		},
 		{
 			"name": "Get Airport Status",
-			"_postman_id": "0880efbf-0338-478d-8918-b80708dfd707",
+			"id": "0880efbf-0338-478d-8918-b80708dfd707",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -104,7 +104,7 @@
 		},
 		{
 			"name": "Get Sessions",
-			"_postman_id": "8599f0f1-c558-4863-a11c-6615a03b8682",
+			"id": "8599f0f1-c558-4863-a11c-6615a03b8682",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -123,7 +123,7 @@
 		},
 		{
 			"name": "Get NOTAMs",
-			"_postman_id": "72150a08-07ba-4aec-8db3-00c8803bdd41",
+			"id": "72150a08-07ba-4aec-8db3-00c8803bdd41",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -142,7 +142,7 @@
 		},
 		{
 			"name": "Get Active ATC Frequencies",
-			"_postman_id": "10175343-69d4-44af-a3c6-58cf5348e5ce",
+			"id": "10175343-69d4-44af-a3c6-58cf5348e5ce",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -161,7 +161,7 @@
 		},
 		{
 			"name": "Get User Grade",
-			"_postman_id": "ff033672-d28c-4b8e-af4a-056c1bf5191c",
+			"id": "ff033672-d28c-4b8e-af4a-056c1bf5191c",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -180,7 +180,7 @@
 		},
 		{
 			"name": "Get Flights",
-			"_postman_id": "5e566c8e-a214-402e-a43a-dcb682f1822b",
+			"id": "5e566c8e-a214-402e-a43a-dcb682f1822b",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -199,7 +199,7 @@
 		},
 		{
 			"name": "Get Airport ATIS",
-			"_postman_id": "2ac34b39-8652-4040-8fec-a6d4e07b60cf",
+			"id": "2ac34b39-8652-4040-8fec-a6d4e07b60cf",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -225,7 +225,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "5645117d-4211-4681-8570-06435a9b1e7f",
+				"id": "075b4874-6f5e-4561-af05-9058cc57ea6a",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -235,7 +235,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "946b33e6-fcc4-42a5-b9b0-0a1650ea77c5",
+				"id": "5fcc6171-1378-4f94-9a9c-953c2ac6174b",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -245,34 +245,29 @@
 	],
 	"variable": [
 		{
-			"id": "5aca9fe4-4f29-47a8-80e5-73838bd2e528",
+			"id": "2b5ff092-6f40-40c9-9ec1-677198671d33",
 			"key": "infiniteAuth",
-			"value": "",
-			"type": "string"
+			"value": "{{infiniteAuth}}"
 		},
 		{
-			"id": "33107911-e29c-43a2-8080-f619692c88af",
+			"id": "89acd371-dccf-468f-a32a-e78e30194e89",
 			"key": "infiniteUser",
-			"value": "9b6176d9-2377-4f72-b1f2-85f8ec7be935",
-			"type": "string"
+			"value": "9b6176d9-2377-4f72-b1f2-85f8ec7be935"
 		},
 		{
-			"id": "969448f0-9134-4102-8e6f-fac436d8700b",
+			"id": "59802b5e-65d7-4820-9da8-439a3350a55c",
 			"key": "infiniteTraining",
-			"value": "45173539-5080-4c95-9b93-a24713d96ec8",
-			"type": "string"
+			"value": "45173539-5080-4c95-9b93-a24713d96ec8"
 		},
 		{
-			"id": "6d6daa04-77f8-42cb-84e3-f463a260baf1",
+			"id": "0d567c4d-98dd-4da5-826d-f35552888a25",
 			"key": "infiniteExpert",
-			"value": "7e5dcd44-1fb5-49cc-bc2c-a9aab1f6a856",
-			"type": "string"
+			"value": "7e5dcd44-1fb5-49cc-bc2c-a9aab1f6a856"
 		},
 		{
-			"id": "d9047e39-c3ca-4c0b-ac2d-5c043d5f1602",
+			"id": "ecea905a-6fab-4f2e-bf1f-6ce0d7ddd486",
 			"key": "infiniteCasual",
-			"value": "d01006e4-3114-473c-8f69-020b89d02884",
-			"type": "string"
+			"value": "d01006e4-3114-473c-8f69-020b89d02884"
 		}
 	]
 }
