@@ -1,0 +1,278 @@
+{
+	"info": {
+		"_postman_id": "16d9eee9-8fbe-46ae-90e7-45ce8c4fedba",
+		"name": "Infinite Flight Live API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Detailed Flight Plan",
+			"_postman_id": "4e230b7f-9837-4b41-b22c-f7a166de50c8",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"value": "Bearer {{infiniteAuth}}",
+						"key": "Authorization",
+						"type": "text"
+					}
+				],
+				"url": "https://api.infiniteflight.com/public/v2/sessions/{{infiniteTraining}}/flights/d247bbf1-fbc1-467c-ab52-4767450ed590/flightplan"
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Flights",
+			"_postman_id": "073134c1-50a2-46d5-afa0-87c36a77e11e",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"type": "text",
+						"value": "Bearer {{infiniteAuth}}",
+						"key": "Authorization"
+					}
+				],
+				"url": {
+					"raw": "https://api.infiniteflight.com/public/v2/users/{{infiniteUser}}/flights?page=1",
+					"protocol": "https",
+					"host": [
+						"api",
+						"infiniteflight",
+						"com"
+					],
+					"path": [
+						"public",
+						"v2",
+						"users",
+						"{{infiniteUser}}",
+						"flights"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Aircraft Liveries",
+			"_postman_id": "c1d0db1c-3bfd-4c02-95a2-333e4a35dc86",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{infinite}}"
+					}
+				],
+				"url": "https://api.infiniteflight.com/public/v2/aircraft/liveries",
+				"description": "Generated from a curl request: \ncurl -X GET 'https://api.infiniteflight.com/public/v2/aircraft/liveries' -H 'Authorization:Bearer {{infinite}}'"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Airport Status",
+			"_postman_id": "0880efbf-0338-478d-8918-b80708dfd707",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{infiniteAuth}}"
+					}
+				],
+				"url": "https://api.infiniteflight.com/public/v2/sessions/{{infiniteExpert}}/airport/klax/status"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Sessions",
+			"_postman_id": "8599f0f1-c558-4863-a11c-6615a03b8682",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{infinite}}"
+					}
+				],
+				"url": "https://api.infiniteflight.com/public/v2/sessions",
+				"description": "Generated from a curl request: \ncurl -X GET 'https://api.infiniteflight.com/public/v2/sessions' -H 'Authorization:Bearer {{infinite}}'"
+			},
+			"response": []
+		},
+		{
+			"name": "Get NOTAMs",
+			"_postman_id": "72150a08-07ba-4aec-8db3-00c8803bdd41",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{infiniteAuth}}"
+					}
+				],
+				"url": "https://api.infiniteflight.com/public/v2/sessions/{{infiniteExpert}}/notams"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Active ATC Frequencies",
+			"_postman_id": "10175343-69d4-44af-a3c6-58cf5348e5ce",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"value": "Bearer {{infiniteAuth}}",
+						"key": "Authorization"
+					}
+				],
+				"url": "https://api.infiniteflight.com/public/v2/sessions/{{infiniteExpert}}/atc",
+				"description": "Generated from a curl request: \ncurl -X GET 'https://api.infiniteflight.com/public/v2/sessions/{{infiniteExpert}}/atc' -H 'Authorization:Bearer {{infiniteAuth}}'"
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Grade",
+			"_postman_id": "ff033672-d28c-4b8e-af4a-056c1bf5191c",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"value": "Bearer {{infinite}}",
+						"key": "Authorization"
+					}
+				],
+				"url": "https://api.infiniteflight.com/public/v2/users/{{infiniteUser}}",
+				"description": "Generated from a curl request: \ncurl -X GET 'https://api.infiniteflight.com/public/v2/users/{{infiniteUser}}' -H 'Authorization:Bearer {{infinite}}'"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Flights",
+			"_postman_id": "5e566c8e-a214-402e-a43a-dcb682f1822b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{infiniteAuth}}"
+					}
+				],
+				"url": "https://api.infiniteflight.com/public/v2/sessions/45173539-5080-4c95-9b93-a24713d96ec8/flights",
+				"description": "Generated from a curl request: \ncurl -X GET 'https://api.infiniteflight.com/public/v2/sessions/45173539-5080-4c95-9b93-a24713d96ec8/flights' -H 'Authorization:Bearer {{infiniteAuth}}'"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Airport ATIS",
+			"_postman_id": "2ac34b39-8652-4040-8fec-a6d4e07b60cf",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"value": "Bearer {{infiniteAuth}}",
+						"key": "Authorization",
+						"type": "text"
+					}
+				],
+				"url": "https://api.infiniteflight.com/public/v2/sessions/{{infiniteExpert}}/airport/klax/atis"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "5645117d-4211-4681-8570-06435a9b1e7f",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "946b33e6-fcc4-42a5-b9b0-0a1650ea77c5",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "5aca9fe4-4f29-47a8-80e5-73838bd2e528",
+			"key": "infiniteAuth",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "33107911-e29c-43a2-8080-f619692c88af",
+			"key": "infiniteUser",
+			"value": "9b6176d9-2377-4f72-b1f2-85f8ec7be935",
+			"type": "string"
+		},
+		{
+			"id": "969448f0-9134-4102-8e6f-fac436d8700b",
+			"key": "infiniteTraining",
+			"value": "45173539-5080-4c95-9b93-a24713d96ec8",
+			"type": "string"
+		},
+		{
+			"id": "6d6daa04-77f8-42cb-84e3-f463a260baf1",
+			"key": "infiniteExpert",
+			"value": "7e5dcd44-1fb5-49cc-bc2c-a9aab1f6a856",
+			"type": "string"
+		},
+		{
+			"id": "d9047e39-c3ca-4c0b-ac2d-5c043d5f1602",
+			"key": "infiniteCasual",
+			"value": "d01006e4-3114-473c-8f69-020b89d02884",
+			"type": "string"
+		}
+	]
+}
