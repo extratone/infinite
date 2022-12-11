@@ -1423,69 +1423,68 @@
 	],
 	"auth": {
 		"type": "bearer",
-		"bearer": {}
+		"bearer": {
+			"token": "{{infiniteAuth}}"
+		}
 	},
 	"event": [
 		{
+			"listen": "prerequest",
 			"script": {
+				"id": "9d866386-4ada-4009-b91c-2cc9a234cc32",
 				"type": "text/javascript",
-				"id": "a418ddb8-f1a3-41c9-9496-00b345391ab0"
-			},
-			"disabled": false,
-			"listen": "test"
+				"exec": [
+					""
+				]
+			}
 		},
 		{
-			"script": {
-				"type": "text/javascript",
-				"id": "a418ddb8-f1a3-41c9-9496-00b345391ab0"
-			},
-			"disabled": false,
 			"listen": "test"
 		}
 	],
 	"variable": [
 		{
-			"id": "44be5fea-c5e5-4fa1-8cbb-66daedefccee",
+			"id": "ca1dc5ed-40b9-4301-bf69-b94f031a0643",
 			"key": "infiniteAuth",
 			"value": "ews2c0lkhkuuo7s51ghemufjep60hkut"
 		},
 		{
-			"id": "a9674b63-e243-4366-8a95-bdaf4979a9d3",
+			"id": "5db63b02-b8a3-47dd-8ff8-86ec3d9e82d9",
 			"key": "infiniteUser",
 			"value": "9b6176d9-2377-4f72-b1f2-85f8ec7be935"
 		},
 		{
-			"id": "ffb06e21-8a32-4069-9d51-3242c61528e3",
+			"id": "1726286b-5b23-4f87-bcb1-9d451c933811",
 			"key": "infiniteTraining",
 			"value": "45173539-5080-4c95-9b93-a24713d96ec8"
 		},
 		{
-			"id": "f1943bd4-bbff-4be4-9f7e-e52261fae45f",
+			"id": "dc94720a-67c7-478a-98ca-0d7d3d2a2f5b",
 			"key": "infiniteExpert",
 			"value": "7e5dcd44-1fb5-49cc-bc2c-a9aab1f6a856"
 		},
 		{
-			"id": "2738c2ef-004b-456c-a5dc-14c0d36db6be",
+			"id": "a54c49f5-e987-4e96-861d-874937e1cce1",
 			"key": "infiniteCasual",
 			"value": "d01006e4-3114-473c-8f69-020b89d02884"
 		},
 		{
-			"id": "65094df6-2af5-417e-aabe-b84425741700",
+			"id": "262a2deb-a51d-4dcd-938a-15d79a823652",
 			"key": "atcSessionID",
 			"value": "b43e734c-2290-4847-bb92-cb42636a725c"
 		},
 		{
-			"id": "8071fc2c-66bf-443f-a4a2-4d0a7104cf9c",
+			"id": "8b2bbabd-a2c7-4bcb-9fc1-0009dd7baa71",
 			"key": "flightID",
 			"value": "d93c6beb-a64c-49c0-ad0b-097538846409"
 		},
 		{
-			"id": "9324b6ce-f120-4753-b2d7-191a985fc0a5",
+			"id": "2306e1aa-f2dd-459a-a182-34f640d099e1",
 			"key": "aircraftID",
 			"value": "e59fa7b4-b708-4480-aebd-26659a4f312b"
 		},
 		{
-			"id": "a4067adf-5a32-43c6-b73c-4f4098817836",
+			"id": "dfc71ad3-29cc-41be-a1fe-c16169f558c5",
 			"key": "infinite",
 			"value": "ews2c0lkhkuuo7s51ghemufjep60hkut"
 		}
