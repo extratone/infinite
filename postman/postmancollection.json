@@ -462,67 +462,6 @@
 					"cookie": [],
 					"responseTime": "0",
 					"body": "{\n    \"errorCode\": 0,\n    \"result\": [\n        {\n            \"maxUsers\": 1500,\n            \"id\": \"7e5dcd44-1fb5-49cc-bc2c-a9aab1f6a856\",\n            \"name\": \"Expert Server\",\n            \"userCount\": 391,\n            \"type\": 1\n        },\n        {\n            \"maxUsers\": 2000,\n            \"id\": \"45173539-5080-4c95-9b93-a24713d96ec8\",\n            \"name\": \"Training Server\",\n            \"userCount\": 150,\n            \"type\": 1\n        },\n        {\n            \"maxUsers\": 2000,\n            \"id\": \"d01006e4-3114-473c-8f69-020b89d02884\",\n            \"name\": \"Casual Server\",\n            \"userCount\": 151,\n            \"type\": 0\n        }\n    ]\n}"
-				},
-				{
-					"id": "5464a799-4110-4959-bd93-e62919b0d58e",
-					"name": "Get Sessions",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": "https://api.infiniteflight.com/public/v2/sessions"
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Date",
-							"value": "Sun, 11 Dec 2022 13:04:10 GMT"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Transfer-Encoding",
-							"value": "chunked"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "x-rate-limit-limit",
-							"value": "1m"
-						},
-						{
-							"key": "x-rate-limit-remaining",
-							"value": "99"
-						},
-						{
-							"key": "x-rate-limit-reset",
-							"value": "2022-12-11T13:05:00.0000000Z"
-						},
-						{
-							"key": "CF-Cache-Status",
-							"value": "DYNAMIC"
-						},
-						{
-							"key": "Server",
-							"value": "cloudflare"
-						},
-						{
-							"key": "CF-RAY",
-							"value": "777e6cb1e8b920d6-IAD"
-						},
-						{
-							"key": "Content-Encoding",
-							"value": "gzip"
-						}
-					],
-					"cookie": [],
-					"responseTime": null,
-					"body": "{\n    \"errorCode\": 0,\n    \"result\": [\n        {\n            \"maxUsers\": 1500,\n            \"id\": \"7e5dcd44-1fb5-49cc-bc2c-a9aab1f6a856\",\n            \"name\": \"Expert Server\",\n            \"userCount\": 658,\n            \"type\": 1\n        },\n        {\n            \"maxUsers\": 2000,\n            \"id\": \"45173539-5080-4c95-9b93-a24713d96ec8\",\n            \"name\": \"Training Server\",\n            \"userCount\": 278,\n            \"type\": 1\n        },\n        {\n            \"maxUsers\": 2000,\n            \"id\": \"d01006e4-3114-473c-8f69-020b89d02884\",\n            \"name\": \"Casual Server\",\n            \"userCount\": 300,\n            \"type\": 0\n        }\n    ]\n}"
 				}
 			]
 		},
@@ -1505,37 +1444,37 @@
 	],
 	"variable": [
 		{
-			"id": "1d9440b9-1e05-4767-8e16-1994a085c5d0",
+			"id": "96ee6f25-889f-4a84-b6f3-5e9def6a2989",
 			"key": "infiniteUser",
 			"value": "9b6176d9-2377-4f72-b1f2-85f8ec7be935"
 		},
 		{
-			"id": "94be8734-00b1-4a0e-b14c-7ec548ba5f8e",
+			"id": "0efc85a9-8d0e-43d2-b2f8-d27a5a6ce35c",
 			"key": "infiniteTraining",
 			"value": "45173539-5080-4c95-9b93-a24713d96ec8"
 		},
 		{
-			"id": "b60abb59-b1c6-47e0-aad5-54fe60ab2c74",
+			"id": "a2fbdff6-079f-49c6-ae42-512f9690711b",
 			"key": "infiniteExpert",
 			"value": "7e5dcd44-1fb5-49cc-bc2c-a9aab1f6a856"
 		},
 		{
-			"id": "4e9c7c02-6710-4988-bd59-87bcc3d345aa",
+			"id": "6f035cd3-7788-417a-b656-54e3260f0b84",
 			"key": "infiniteCasual",
 			"value": "d01006e4-3114-473c-8f69-020b89d02884"
 		},
 		{
-			"id": "a78aab97-af2d-409e-9330-107a7bc24f5c",
+			"id": "18d18c8d-ce0a-4cdc-80a7-b6362f201fa6",
 			"key": "atcSessionID",
 			"value": "b43e734c-2290-4847-bb92-cb42636a725c"
 		},
 		{
-			"id": "42058e0a-9157-45ba-85f7-6db8a6c8294f",
+			"id": "f69b2a64-d904-47a4-80a1-7c76775309bf",
 			"key": "flightID",
 			"value": "d93c6beb-a64c-49c0-ad0b-097538846409"
 		},
 		{
-			"id": "d2bd3469-aa30-4c65-b4e7-d48a07da55fc",
+			"id": "4ac25f3d-8e30-4601-885b-c70f65648ece",
 			"key": "aircraftID",
 			"value": "e59fa7b4-b708-4480-aebd-26659a4f312b"
 		}
