@@ -1176,47 +1176,51 @@
 	},
 	"event": [
 		{
-			"disabled": false,
 			"listen": "prerequest"
 		},
 		{
-			"listen": "test",
-			"disabled": false
+			"listen": "test"
 		}
 	],
 	"variable": [
 		{
-			"id": "7e9d28db-3bcc-4593-9281-0bd6fb1a4d21",
+			"id": "54414a5d-4825-441c-9505-fc0735b70b05",
 			"key": "infiniteUser",
 			"value": "9b6176d9-2377-4f72-b1f2-85f8ec7be935"
 		},
 		{
-			"id": "1cd315bd-732c-449b-93d9-fd76955e3055",
+			"id": "227e6e61-ccd3-45cf-b3c6-99f9648c3e0e",
 			"key": "infiniteTraining",
 			"value": "45173539-5080-4c95-9b93-a24713d96ec8"
 		},
 		{
-			"id": "831bce1c-4b95-400e-92ce-f42ea9e15dc1",
+			"id": "d04316e6-f0fb-4ef2-8fcd-a19e55241432",
 			"key": "infiniteExpert",
 			"value": "7e5dcd44-1fb5-49cc-bc2c-a9aab1f6a856"
 		},
 		{
-			"id": "f20c0b2c-99b2-4353-8d25-f3be73b9a58f",
+			"id": "846f95f3-6ad1-461f-9fc7-281d31bbfccf",
+			"key": "infiniteBeta",
+			"value": "df2a8d19-3a54-4ce5-ae65-0b722186e44c",
+			"type": "string"
+		},
+		{
+			"id": "2644ff13-817f-402d-83e4-f4eea0403fba",
 			"key": "infiniteCasual",
 			"value": "d01006e4-3114-473c-8f69-020b89d02884"
 		},
 		{
-			"id": "60ad7515-c4cd-470b-9dc6-543e051aa9cd",
+			"id": "5cd41040-2aa3-4cb0-ae97-ceea55e28619",
 			"key": "atcSessionID",
 			"value": "b43e734c-2290-4847-bb92-cb42636a725c"
 		},
 		{
-			"id": "ed9faf8b-e3c1-46c7-acb7-8fa4076dedcf",
+			"id": "57e3387f-a385-437b-9411-babb9c56061e",
 			"key": "flightID",
 			"value": "98b9d30e-9d0c-4b13-b20f-e9d4a4c7ea43"
 		},
 		{
-			"id": "2d808f6f-3bd6-41a4-8bf4-b56e1d52f249",
+			"id": "e9f9881c-f94b-4599-a1ad-88ac5b83bf9e",
 			"key": "aircraftID",
 			"value": "e59fa7b4-b708-4480-aebd-26659a4f312b"
 		}
