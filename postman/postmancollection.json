@@ -13,8 +13,8 @@
 				"method": "GET",
 				"header": [
 					{
-						"key": "Authorization",
 						"type": "text",
+						"key": "Authorization",
 						"value": "Bearer {{infiniteAuth}}"
 					}
 				],
@@ -22,7 +22,7 @@
 					"mode": "urlencoded",
 					"urlencoded": []
 				},
-				"url": "{{baseURL}}/sessions/{{infiniteBeta}}/flights/{{flightID}}/flightplan"
+				"url": "{{baseURL}}/sessions/{{infiniteExpert}}/flights/{{flightID}}/flightplan"
 			},
 			"response": []
 		},
@@ -33,9 +33,9 @@
 				"method": "GET",
 				"header": [
 					{
-						"type": "text",
+						"key": "Authorization",
 						"value": "Bearer {{infiniteAuth}}",
-						"key": "Authorization"
+						"type": "text"
 					}
 				],
 				"url": {
@@ -43,8 +43,8 @@
 					"protocol": "https",
 					"query": [
 						{
-							"value": "1",
-							"key": "page"
+							"key": "page",
+							"value": "1"
 						}
 					]
 				}
@@ -57,9 +57,9 @@
 						"method": "GET",
 						"header": [
 							{
-								"type": "text",
 								"value": "Bearer {{infiniteAuth}}",
-								"key": "Authorization"
+								"key": "Authorization",
+								"type": "text"
 							}
 						],
 						"url": ""
@@ -69,9 +69,9 @@
 					"_postman_previewlanguage": "json",
 					"header": [
 						{
+							"value": "Thu, 08 Dec 2022 08:20:50 GMT",
 							"disabled": false,
 							"key": "Date",
-							"value": "Thu, 08 Dec 2022 08:20:50 GMT",
 							"enabled": true
 						},
 						{
@@ -87,27 +87,27 @@
 							"enabled": true
 						},
 						{
-							"disabled": false,
 							"value": "keep-alive",
 							"key": "Connection",
+							"disabled": false,
 							"enabled": true
 						},
 						{
+							"value": "1m",
 							"disabled": false,
 							"key": "x-rate-limit-limit",
-							"value": "1m",
 							"enabled": true
 						},
 						{
 							"value": "80",
-							"disabled": false,
 							"key": "x-rate-limit-remaining",
+							"disabled": false,
 							"enabled": true
 						},
 						{
 							"key": "x-rate-limit-reset",
-							"disabled": false,
 							"value": "2022-12-08T08:21:00.0000000Z",
+							"disabled": false,
 							"enabled": true
 						},
 						{
@@ -117,21 +117,21 @@
 							"enabled": true
 						},
 						{
-							"value": "cloudflare",
 							"disabled": false,
 							"key": "Server",
+							"value": "cloudflare",
 							"enabled": true
 						},
 						{
 							"value": "776415853a6a2252-ORD",
-							"disabled": false,
 							"key": "CF-RAY",
+							"disabled": false,
 							"enabled": true
 						},
 						{
-							"disabled": false,
-							"value": "gzip",
 							"key": "Content-Encoding",
+							"value": "gzip",
+							"disabled": false,
 							"enabled": true
 						}
 					],
@@ -148,8 +148,8 @@
 				"method": "GET",
 				"header": [
 					{
-						"key": "Authorization",
-						"value": "Bearer {{infinite}}"
+						"value": "Bearer {{infinite}}",
+						"key": "Authorization"
 					}
 				],
 				"url": "https:/",
@@ -163,8 +163,8 @@
 						"method": "GET",
 						"header": [
 							{
-								"value": "Bearer {{infinite}}",
-								"key": "Authorization"
+								"key": "Authorization",
+								"value": "Bearer {{infinite}}"
 							}
 						],
 						"url": "https://api.infiniteflight.com"
@@ -174,56 +174,56 @@
 					"_postman_previewlanguage": "json",
 					"header": [
 						{
-							"disabled": false,
-							"value": "Thu, 08 Dec 2022 08:20:59 GMT",
 							"key": "Date",
+							"value": "Thu, 08 Dec 2022 08:20:59 GMT",
+							"disabled": false,
 							"enabled": true
 						},
 						{
 							"key": "Content-Type",
-							"value": "application/json; charset=utf-8",
 							"disabled": false,
+							"value": "application/json; charset=utf-8",
 							"enabled": true
 						},
 						{
 							"value": "chunked",
-							"key": "Transfer-Encoding",
 							"disabled": false,
+							"key": "Transfer-Encoding",
 							"enabled": true
 						},
 						{
 							"key": "Connection",
-							"disabled": false,
 							"value": "keep-alive",
+							"disabled": false,
 							"enabled": true
 						},
 						{
-							"key": "x-rate-limit-limit",
-							"disabled": false,
 							"value": "1m",
+							"disabled": false,
+							"key": "x-rate-limit-limit",
 							"enabled": true
 						},
 						{
-							"key": "x-rate-limit-remaining",
-							"disabled": false,
 							"value": "79",
-							"enabled": true
-						},
-						{
 							"disabled": false,
-							"value": "2022-12-08T08:21:00.0000000Z",
-							"key": "x-rate-limit-reset",
+							"key": "x-rate-limit-remaining",
 							"enabled": true
 						},
 						{
+							"key": "x-rate-limit-reset",
+							"value": "2022-12-08T08:21:00.0000000Z",
+							"disabled": false,
+							"enabled": true
+						},
+						{
+							"key": "CF-Cache-Status",
 							"value": "DYNAMIC",
 							"disabled": false,
-							"key": "CF-Cache-Status",
 							"enabled": true
 						},
 						{
-							"key": "Server",
 							"value": "cloudflare",
+							"key": "Server",
 							"disabled": false,
 							"enabled": true
 						},
@@ -234,9 +234,9 @@
 							"enabled": true
 						},
 						{
+							"disabled": false,
 							"key": "Content-Encoding",
 							"value": "gzip",
-							"disabled": false,
 							"enabled": true
 						}
 					],
@@ -253,9 +253,9 @@
 				"method": "GET",
 				"header": [
 					{
+						"type": "text",
 						"value": "Bearer {{infiniteAuth}}",
-						"key": "Authorization",
-						"type": "text"
+						"key": "Authorization"
 					}
 				],
 				"body": {
@@ -273,9 +273,9 @@
 				"method": "GET",
 				"header": [
 					{
+						"value": "Bearer {{infinite}}",
 						"key": "Authorization",
-						"type": "text",
-						"value": "Bearer {{infinite}}"
+						"type": "text"
 					}
 				],
 				"body": {
@@ -293,9 +293,9 @@
 				"method": "GET",
 				"header": [
 					{
+						"value": "Bearer {{infiniteAuth}}",
 						"key": "Authorization",
-						"type": "text",
-						"value": "Bearer {{infiniteAuth}}"
+						"type": "text"
 					}
 				],
 				"body": {
@@ -313,8 +313,8 @@
 				"method": "GET",
 				"header": [
 					{
-						"type": "text",
 						"key": "Authorization",
+						"type": "text",
 						"value": "Bearer {{infiniteAuth}}"
 					}
 				],
@@ -371,32 +371,32 @@
 							"enabled": true
 						},
 						{
-							"disabled": false,
-							"key": "Transfer-Encoding",
 							"value": "chunked",
+							"key": "Transfer-Encoding",
+							"disabled": false,
 							"enabled": true
 						},
 						{
-							"disabled": false,
 							"key": "Connection",
+							"disabled": false,
 							"value": "keep-alive",
 							"enabled": true
 						},
 						{
-							"key": "x-rate-limit-limit",
-							"value": "1m",
 							"disabled": false,
+							"value": "1m",
+							"key": "x-rate-limit-limit",
 							"enabled": true
 						},
 						{
-							"disabled": false,
 							"key": "x-rate-limit-remaining",
 							"value": "97",
+							"disabled": false,
 							"enabled": true
 						},
 						{
-							"disabled": false,
 							"key": "x-rate-limit-reset",
+							"disabled": false,
 							"value": "2022-12-08T08:22:00.0000000Z",
 							"enabled": true
 						},
@@ -408,20 +408,20 @@
 						},
 						{
 							"disabled": false,
-							"key": "Server",
 							"value": "cloudflare",
+							"key": "Server",
 							"enabled": true
 						},
 						{
 							"key": "CF-RAY",
-							"disabled": false,
 							"value": "776416ec29fc2252-ORD",
+							"disabled": false,
 							"enabled": true
 						},
 						{
 							"value": "gzip",
-							"disabled": false,
 							"key": "Content-Encoding",
+							"disabled": false,
 							"enabled": true
 						}
 					],
@@ -438,9 +438,9 @@
 				"method": "GET",
 				"header": [
 					{
-						"type": "text",
+						"key": "Authorization",
 						"value": "Bearer {{infiniteAuth}}",
-						"key": "Authorization"
+						"type": "text"
 					}
 				],
 				"body": {
@@ -458,9 +458,9 @@
 				"method": "GET",
 				"header": [
 					{
-						"type": "text",
 						"key": "Authorization",
-						"value": "Bearer {{infiniteAuth}}"
+						"value": "Bearer {{infiniteAuth}}",
+						"type": "text"
 					}
 				],
 				"body": {
@@ -498,9 +498,9 @@
 				"method": "GET",
 				"header": [
 					{
-						"key": "Authorization",
+						"type": "text",
 						"value": " Bearer {{infiniteAuth}}",
-						"type": "text"
+						"key": "Authorization"
 					}
 				],
 				"body": {
@@ -519,8 +519,8 @@
 				"header": [
 					{
 						"type": "text",
-						"key": "Authorization",
-						"value": "Bearer {{infiniteAuth}}"
+						"value": "Bearer {{infiniteAuth}}",
+						"key": "Authorization"
 					}
 				],
 				"url": {
@@ -528,8 +528,8 @@
 					"protocol": "https",
 					"query": [
 						{
-							"key": "page",
-							"value": "1"
+							"value": "1",
+							"key": "page"
 						}
 					]
 				}
@@ -554,9 +554,9 @@
 					"_postman_previewlanguage": "json",
 					"header": [
 						{
-							"key": "Date",
 							"value": "Thu, 08 Dec 2022 08:22:29 GMT",
 							"disabled": false,
+							"key": "Date",
 							"enabled": true
 						},
 						{
@@ -566,9 +566,9 @@
 							"enabled": true
 						},
 						{
-							"key": "Transfer-Encoding",
 							"value": "chunked",
 							"disabled": false,
+							"key": "Transfer-Encoding",
 							"enabled": true
 						},
 						{
@@ -578,44 +578,44 @@
 							"enabled": true
 						},
 						{
+							"key": "x-rate-limit-limit",
 							"value": "1m",
 							"disabled": false,
-							"key": "x-rate-limit-limit",
 							"enabled": true
 						},
 						{
+							"disabled": false,
 							"key": "x-rate-limit-remaining",
 							"value": "92",
-							"disabled": false,
 							"enabled": true
 						},
 						{
+							"key": "x-rate-limit-reset",
 							"disabled": false,
 							"value": "2022-12-08T08:23:00.0000000Z",
-							"key": "x-rate-limit-reset",
 							"enabled": true
 						},
 						{
-							"disabled": false,
 							"value": "DYNAMIC",
 							"key": "CF-Cache-Status",
+							"disabled": false,
 							"enabled": true
 						},
 						{
+							"value": "cloudflare",
 							"key": "Server",
 							"disabled": false,
-							"value": "cloudflare",
 							"enabled": true
 						},
 						{
 							"key": "CF-RAY",
-							"value": "776417efeed12252-ORD",
 							"disabled": false,
+							"value": "776417efeed12252-ORD",
 							"enabled": true
 						},
 						{
-							"disabled": false,
 							"key": "Content-Encoding",
+							"disabled": false,
 							"value": "gzip",
 							"enabled": true
 						}
@@ -633,9 +633,9 @@
 				"method": "GET",
 				"header": [
 					{
-						"key": "Authorization",
+						"value": "Bearer {{infiniteAuth}}",
 						"type": "text",
-						"value": "Bearer {{infiniteAuth}}"
+						"key": "Authorization"
 					}
 				],
 				"url": "https:///%7B%7BatcSessionID%7D%7D"
@@ -649,9 +649,9 @@
 				"method": "GET",
 				"header": [
 					{
-						"value": "Bearer {{infiniteAuth}}",
+						"type": "text",
 						"key": "Authorization",
-						"type": "text"
+						"value": "Bearer {{infiniteAuth}}"
 					}
 				],
 				"body": {
@@ -689,9 +689,9 @@
 				"method": "GET",
 				"header": [
 					{
-						"key": "Authorization",
+						"value": "Bearer {{infiniteAuth}}",
 						"type": "text",
-						"value": "Bearer {{infiniteAuth}}"
+						"key": "Authorization"
 					}
 				],
 				"body": {
@@ -709,8 +709,8 @@
 				"method": "GET",
 				"header": [
 					{
-						"type": "text",
 						"key": "Authorization",
+						"type": "text",
 						"value": "Bearer {{infiniteAuth}}"
 					}
 				],
@@ -735,53 +735,53 @@
 			"disabled": false
 		},
 		{
-			"listen": "test",
-			"disabled": false
+			"disabled": false,
+			"listen": "test"
 		}
 	],
 	"variable": [
 		{
-			"id": "a39bdb82-b97a-499e-a3d1-284264809ef5",
+			"id": "c063fcda-ea9b-474a-9683-39256bd059ff",
 			"key": "infiniteUser",
 			"value": "9b6176d9-2377-4f72-b1f2-85f8ec7be935"
 		},
 		{
-			"id": "66cefb69-6399-4025-bceb-7ea4c650fe71",
+			"id": "f45d7379-d473-4d70-b3c4-99cdba4c382b",
 			"key": "infiniteTraining",
 			"value": "45173539-5080-4c95-9b93-a24713d96ec8"
 		},
 		{
-			"id": "d4c59076-3eb0-4e25-bb56-d65d27729e5d",
+			"id": "0b6692c8-1440-44c5-b5ca-71e0140c9927",
 			"key": "infiniteExpert",
 			"value": "7e5dcd44-1fb5-49cc-bc2c-a9aab1f6a856"
 		},
 		{
-			"id": "f4c21492-2709-4a35-b7ed-8fac6bcd31cf",
+			"id": "4694d779-517e-4876-9b97-6fd98d0d42de",
 			"key": "infiniteBeta",
 			"value": "df2a8d19-3a54-4ce5-ae65-0b722186e44c"
 		},
 		{
-			"id": "f36897ea-18bc-40ed-8102-8dcd340a7287",
+			"id": "f2afbceb-d524-4954-a5b3-4ea7fda2041f",
 			"key": "infiniteCasual",
 			"value": "d01006e4-3114-473c-8f69-020b89d02884"
 		},
 		{
-			"id": "ddf62784-506a-4170-a66d-a892b6fdd148",
+			"id": "c0b27d26-de82-4b06-978c-a296dbe0014e",
 			"key": "atcSessionID",
 			"value": "b43e734c-2290-4847-bb92-cb42636a725c"
 		},
 		{
-			"id": "949fe65f-05b2-4c2d-8e48-fd9f8572ac52",
+			"id": "7cf9f96c-ce07-46c2-84f5-7d620ad51fb7",
 			"key": "flightID",
 			"value": "1f73c94d-7ec1-4ac1-a2ac-26933fa40d29"
 		},
 		{
-			"id": "d82f1cd1-cc79-4109-9d32-5a4b288d4625",
+			"id": "2804557c-54b2-4c2d-b96e-1b392a6ad78d",
 			"key": "aircraftID",
 			"value": "3f78766a-30c8-4d65-95ae-ebc2fb758aac"
 		},
 		{
-			"id": "f11926b2-b88e-430d-b933-6c86df9951c2",
+			"id": "e67c9c46-fd1f-4f54-a652-b14b362b6400",
 			"key": "baseURL",
 			"value": "https://api.infiniteflight.com/public/v2"
 		}
