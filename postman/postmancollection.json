@@ -1215,7 +1215,79 @@
 				},
 				"url": "{{baseURL}}/aircraft/{{aircraftID}}/liveries"
 			},
-			"response": []
+			"response": [
+				{
+					"id": "9a192294-003e-4e92-b5e5-8a51e524f441",
+					"name": "Get Aircraft Liveries",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"value": "Bearer {{infiniteAuth}}",
+								"type": "text",
+								"key": "Authorization"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": "{{baseURL}}/aircraft/{{aircraftID}}/liveries"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 08 Mar 2023 17:31:52 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-rate-limit-limit",
+							"value": "1m"
+						},
+						{
+							"key": "x-rate-limit-remaining",
+							"value": "97"
+						},
+						{
+							"key": "x-rate-limit-reset",
+							"value": "2023-03-08T17:32:00.0000000Z"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "7a4cd073b862233c-ORD"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"errorCode\": 0,\n    \"result\": [\n        {\n            \"id\": \"49d08a50-3179-422a-b33a-a7c91628de75\",\n            \"aircraftID\": \"3f78766a-30c8-4d65-95ae-ebc2fb758aac\",\n            \"aircraftName\": \"MD-11F\",\n            \"liveryName\": \"Generic\"\n        },\n        {\n            \"id\": \"bc979e7b-957e-4f75-bed8-cb7334671693\",\n            \"aircraftID\": \"3f78766a-30c8-4d65-95ae-ebc2fb758aac\",\n            \"aircraftName\": \"MD-11F\",\n            \"liveryName\": \"Aeroflot Cargo\"\n        },\n        {\n            \"id\": \"291750c3-82fd-4406-99a2-3b01572e762f\",\n            \"aircraftID\": \"3f78766a-30c8-4d65-95ae-ebc2fb758aac\",\n            \"aircraftName\": \"MD-11F\",\n            \"liveryName\": \"Centurion Air Cargo\"\n        },\n        {\n            \"id\": \"256df05e-c0b8-41b2-81a5-ed27c72f450b\",\n            \"aircraftID\": \"3f78766a-30c8-4d65-95ae-ebc2fb758aac\",\n            \"aircraftName\": \"MD-11F\",\n            \"liveryName\": \"Ethiopian Airlines\"\n        },\n        {\n            \"id\": \"f7a85def-8298-45dc-a954-d0b9d4043cd8\",\n            \"aircraftID\": \"3f78766a-30c8-4d65-95ae-ebc2fb758aac\",\n            \"aircraftName\": \"MD-11F\",\n            \"liveryName\": \"Fedex\"\n        },\n        {\n            \"id\": \"7bbe5ebf-e369-4d8f-81f5-d9931e82ca7a\",\n            \"aircraftID\": \"3f78766a-30c8-4d65-95ae-ebc2fb758aac\",\n            \"aircraftName\": \"MD-11F\",\n            \"liveryName\": \"Lufthansa Cargo\"\n        },\n        {\n            \"id\": \"eeda026b-d60e-4930-9aba-fcd8b754dd3d\",\n            \"aircraftID\": \"3f78766a-30c8-4d65-95ae-ebc2fb758aac\",\n            \"aircraftName\": \"MD-11F\",\n            \"liveryName\": \"Martinair Cargo\"\n        },\n        {\n            \"id\": \"5f025448-0483-4d74-b5de-91f5054e4e01\",\n            \"aircraftID\": \"3f78766a-30c8-4d65-95ae-ebc2fb758aac\",\n            \"aircraftName\": \"MD-11F\",\n            \"liveryName\": \"Saudia\"\n        },\n        {\n            \"id\": \"541c7f4c-e0ab-4ad8-81a7-45c3127a2194\",\n            \"aircraftID\": \"3f78766a-30c8-4d65-95ae-ebc2fb758aac\",\n            \"aircraftName\": \"MD-11F\",\n            \"liveryName\": \"UPS\"\n        },\n        {\n            \"id\": \"b6c4c11d-5e82-4ddc-a925-17a2e63d6964\",\n            \"aircraftID\": \"3f78766a-30c8-4d65-95ae-ebc2fb758aac\",\n            \"aircraftName\": \"MD-11F\",\n            \"liveryName\": \"VARIG LOG\"\n        },\n        {\n            \"id\": \"74f624d7-e1f6-477a-8d85-1d099a5108ca\",\n            \"aircraftID\": \"3f78766a-30c8-4d65-95ae-ebc2fb758aac\",\n            \"aircraftName\": \"MD-11F\",\n            \"liveryName\": \"World Airways\"\n        }\n    ]\n}"
+				}
+			]
 		}
 	],
 	"auth": {
@@ -1234,48 +1306,48 @@
 	],
 	"variable": [
 		{
-			"id": "c87374ad-df48-4ec7-8823-a09ae62c2a02",
+			"id": "d200861d-b52c-4168-b98f-ba9fa42eeb86",
 			"key": "infiniteUser",
 			"value": "9b6176d9-2377-4f72-b1f2-85f8ec7be935"
 		},
 		{
-			"id": "cb7f9676-f5d8-4a99-90cc-26365f75ec72",
+			"id": "ac4be293-49cb-40fd-af80-b1e6eafe4883",
 			"key": "infiniteTraining",
 			"value": "45173539-5080-4c95-9b93-a24713d96ec8"
 		},
 		{
-			"id": "5fb09bb3-e6b1-42b8-9584-2d95155824b2",
+			"id": "d0257a4e-3c51-4341-8de6-6ebecc1eb28c",
 			"key": "infiniteExpert",
 			"value": "df2a8d19-3a54-4ce5-ae65-0b722186e44c"
 		},
 		{
-			"id": "13768198-5fd0-40a3-8f36-d1b4bff3b60d",
+			"id": "f88da72b-37ac-4121-9c21-30273e12c4cf",
 			"key": "infiniteBeta",
 			"value": "df2a8d19-3a54-4ce5-ae65-0b722186e44c",
 			"disabled": true
 		},
 		{
-			"id": "8938c67b-a5b6-4241-a359-9ba1874f2a4e",
+			"id": "36dbc33d-7269-4593-bdbc-1e2dd6eaa52b",
 			"key": "infiniteCasual",
 			"value": "d01006e4-3114-473c-8f69-020b89d02884"
 		},
 		{
-			"id": "508e5619-3c81-44cf-b643-5c13226f5324",
+			"id": "5b76543e-4132-4b1b-99ed-dcb25955c010",
 			"key": "atcSessionID",
 			"value": "b43e734c-2290-4847-bb92-cb42636a725c"
 		},
 		{
-			"id": "871c0dd9-df68-4547-b462-3e80cf700d94",
+			"id": "ada9acbc-0402-4928-ab30-1037cf1b9b76",
 			"key": "flightID",
 			"value": "0ba22193-36a7-452b-96ba-042c55b27e47"
 		},
 		{
-			"id": "01f6e57f-456b-44f5-b0d0-bd93f4b4a2ba",
+			"id": "740fb968-e852-4f26-b04e-c24fcc8e0f9d",
 			"key": "aircraftID",
 			"value": "3f78766a-30c8-4d65-95ae-ebc2fb758aac"
 		},
 		{
-			"id": "8bbe4144-91e8-4a1d-8123-7e3b8f809411",
+			"id": "9adc507c-df88-4113-8d18-9034bf771d5d",
 			"key": "baseURL",
 			"value": "https://api.infiniteflight.com/public/v2"
 		}
