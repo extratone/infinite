@@ -816,22 +816,7 @@
 						"key": "Authorization"
 					}
 				],
-				"url": {
-					"raw": "https:/?page=1",
-					"host": [
-						"https"
-					],
-					"port": "",
-					"path": [
-						""
-					],
-					"query": [
-						{
-							"key": "page",
-							"value": "1"
-						}
-					]
-				}
+				"url": "{{baseURL}}/users/{{infiniteUser}}/atc"
 			},
 			"response": [
 				{
@@ -1038,48 +1023,48 @@
 	],
 	"variable": [
 		{
-			"id": "9d62bf01-02d3-4a2c-8642-5d4e216a4a17",
+			"id": "eecf4514-2a59-45a3-9f13-2a3137748718",
 			"key": "infiniteUser",
 			"value": "9b6176d9-2377-4f72-b1f2-85f8ec7be935"
 		},
 		{
-			"id": "741bcdf4-ae18-4644-a638-b5d5d6a2db6d",
+			"id": "6bc28a26-6ac5-4718-9d08-208950bacd95",
 			"key": "infiniteTraining",
 			"value": "45173539-5080-4c95-9b93-a24713d96ec8"
 		},
 		{
-			"id": "a1b13bf8-5a9b-45a8-9a18-daca3fd6fe84",
+			"id": "8252f410-ec44-40fd-98fb-c5c8df6fb101",
 			"key": "infiniteExpert",
 			"value": "df2a8d19-3a54-4ce5-ae65-0b722186e44c"
 		},
 		{
-			"id": "e6ff7ead-47af-4dfe-b7c8-6f77eaf0aecd",
+			"id": "a92f4326-15f0-41fa-904f-5b62ef7c359b",
 			"key": "infiniteBeta",
 			"value": "df2a8d19-3a54-4ce5-ae65-0b722186e44c",
 			"disabled": true
 		},
 		{
-			"id": "cd3437b3-4ff5-40d8-ac88-32140f2c24d0",
+			"id": "62b3b451-26cf-4163-9064-4aa1225b944e",
 			"key": "infiniteCasual",
 			"value": "d01006e4-3114-473c-8f69-020b89d02884"
 		},
 		{
-			"id": "cca84e6a-9a48-493d-855d-11dffe164175",
+			"id": "5e497cf0-d75e-47d2-9c65-d0ce18ad0734",
 			"key": "atcSessionID",
 			"value": "b43e734c-2290-4847-bb92-cb42636a725c"
 		},
 		{
-			"id": "b652e45c-26fb-4d43-8d3b-bfaf66abee4c",
+			"id": "4170690f-247e-4d78-a4d1-e8553c27c9cb",
 			"key": "flightID",
 			"value": "43fa9743-9411-4da1-8bd6-f6d6a35005e0"
 		},
 		{
-			"id": "6ac5cb89-fe6c-4e7a-bfba-d990c8a8f47f",
+			"id": "6a49d8b5-82b7-4890-8572-f5e5987d9a6e",
 			"key": "aircraftID",
 			"value": "3f78766a-30c8-4d65-95ae-ebc2fb758aac"
 		},
 		{
-			"id": "801c0368-c2aa-418c-9c03-ddd4f02f01d7",
+			"id": "9e7ec3a9-721a-4bef-814c-e2edcc63f0cb",
 			"key": "baseURL",
 			"value": "https://api.infiniteflight.com/public/v2"
 		}
