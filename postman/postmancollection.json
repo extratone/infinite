@@ -44,7 +44,79 @@
 				},
 				"url": "{{baseURL}}/users/{{infiniteUser}}/flights"
 			},
-			"response": []
+			"response": [
+				{
+					"id": "2aeb9587-c5ce-480c-88a7-a4c0b2627751",
+					"name": "Get User Flights",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{infiniteAuth}}"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": "{{baseURL}}/users/{{infiniteUser}}/flights"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 08 Mar 2023 17:22:32 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-rate-limit-limit",
+							"value": "1m"
+						},
+						{
+							"key": "x-rate-limit-remaining",
+							"value": "98"
+						},
+						{
+							"key": "x-rate-limit-reset",
+							"value": "2023-03-08T17:23:00.0000000Z"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "7a4cc2c8ee95233c-ORD"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"errorCode\": 0,\n    \"result\": {\n        \"pageIndex\": 1,\n        \"totalPages\": 47,\n        \"totalCount\": 463,\n        \"hasPreviousPage\": false,\n        \"hasNextPage\": true,\n        \"data\": [\n            {\n                \"id\": \"0ba22193-36a7-452b-96ba-042c55b27e47\",\n                \"created\": \"2023-03-08T13:50:44.611892+00:00\",\n                \"userId\": \"9b6176d9-2377-4f72-b1f2-85f8ec7be935\",\n                \"aircraftId\": \"e59fa7b4-b708-4480-aebd-26659a4f312b\",\n                \"liveryId\": \"d8ed15e3-522d-44c8-9324-42d93961d726\",\n                \"callsign\": \"Orca 11\",\n                \"server\": \"Expert Server\",\n                \"dayTime\": 0,\n                \"nightTime\": 28.223497,\n                \"totalTime\": 28.223497,\n                \"landingCount\": 2,\n                \"originAirport\": \"KSUU\",\n                \"destinationAirport\": \"KSUU\",\n                \"xp\": 905\n            },\n            {\n                \"id\": \"b03dca58-032a-491a-bf0d-f581f7557cde\",\n                \"created\": \"2023-03-08T02:21:27.364813+00:00\",\n                \"userId\": \"9b6176d9-2377-4f72-b1f2-85f8ec7be935\",\n                \"aircraftId\": \"e59fa7b4-b708-4480-aebd-26659a4f312b\",\n                \"liveryId\": \"d8ed15e3-522d-44c8-9324-42d93961d726\",\n                \"callsign\": \"Orca 10\",\n                \"server\": \"Expert Server\",\n                \"dayTime\": 0,\n                \"nightTime\": 18.150482,\n                \"totalTime\": 18.150482,\n                \"landingCount\": 1,\n                \"originAirport\": \"KNUC\",\n                \"destinationAirport\": \"KLAX\",\n                \"xp\": 346\n            },\n            {\n                \"id\": \"be07ac12-bee8-490d-a9d3-95e886e7d032\",\n                \"created\": \"2023-03-08T02:20:24.752886+00:00\",\n                \"userId\": \"9b6176d9-2377-4f72-b1f2-85f8ec7be935\",\n                \"aircraftId\": \"e59fa7b4-b708-4480-aebd-26659a4f312b\",\n                \"liveryId\": \"d8ed15e3-522d-44c8-9324-42d93961d726\",\n                \"callsign\": \"Orca 10\",\n                \"server\": \"Expert Server\",\n                \"dayTime\": 0,\n                \"nightTime\": 0,\n                \"totalTime\": 0,\n                \"landingCount\": 0,\n                \"originAirport\": \"KSUU\",\n                \"destinationAirport\": \"KSUU\",\n                \"xp\": 0\n            },\n            {\n                \"id\": \"c7192928-4317-4e04-9c5f-892c77bb53d9\",\n                \"created\": \"2023-03-08T00:18:58.541721+00:00\",\n                \"userId\": \"9b6176d9-2377-4f72-b1f2-85f8ec7be935\",\n                \"aircraftId\": \"e59fa7b4-b708-4480-aebd-26659a4f312b\",\n                \"liveryId\": \"d8ed15e3-522d-44c8-9324-42d93961d726\",\n                \"callsign\": \"Orca 9\",\n                \"server\": \"Expert Server\",\n                \"dayTime\": 10.935234,\n                \"nightTime\": 0,\n                \"totalTime\": 10.935234,\n                \"landingCount\": 0,\n                \"originAirport\": \"KSUU\",\n                \"destinationAirport\": null,\n                \"xp\": 109\n            },\n            {\n                \"id\": \"3e52ce50-950a-42fb-8bbf-7338c80acb6d\",\n                \"created\": \"2023-03-07T23:50:30.890308+00:00\",\n                \"userId\": \"9b6176d9-2377-4f72-b1f2-85f8ec7be935\",\n                \"aircraftId\": \"e59fa7b4-b708-4480-aebd-26659a4f312b\",\n                \"liveryId\": \"d8ed15e3-522d-44c8-9324-42d93961d726\",\n                \"callsign\": \"Orca 9\",\n                \"server\": \"Expert Server\",\n                \"dayTime\": 22.28769,\n                \"nightTime\": 0,\n                \"totalTime\": 22.28769,\n                \"landingCount\": 0,\n                \"originAirport\": \"YAMB\",\n                \"destinationAirport\": \"YPLI\",\n                \"xp\": 223\n            },\n            {\n                \"id\": \"2b08eb91-bc73-4e25-beda-52e065499e37\",\n                \"created\": \"2023-03-07T23:20:08.004891+00:00\",\n                \"userId\": \"9b6176d9-2377-4f72-b1f2-85f8ec7be935\",\n                \"aircraftId\": \"e59fa7b4-b708-4480-aebd-26659a4f312b\",\n                \"liveryId\": \"d8ed15e3-522d-44c8-9324-42d93961d726\",\n                \"callsign\": \"Orca 8\",\n                \"server\": \"Training Server\",\n                \"dayTime\": 16.81271,\n                \"nightTime\": 0,\n                \"totalTime\": 16.81271,\n                \"landingCount\": 1,\n                \"originAirport\": \"KEDW\",\n                \"destinationAirport\": \"KLAX\",\n                \"xp\": 340\n            },\n            {\n                \"id\": \"4530b66a-744b-42e3-840a-1a7f16768146\",\n                \"created\": \"2023-03-07T22:04:04.005883+00:00\",\n                \"userId\": \"9b6176d9-2377-4f72-b1f2-85f8ec7be935\",\n                \"aircraftId\": \"e59fa7b4-b708-4480-aebd-26659a4f312b\",\n                \"liveryId\": \"d8ed15e3-522d-44c8-9324-42d93961d726\",\n                \"callsign\": \"Orca 7 Heavy\",\n                \"server\": \"Expert Server\",\n                \"dayTime\": 55.29839,\n                \"nightTime\": 0,\n                \"totalTime\": 55.29839,\n                \"landingCount\": 5,\n                \"originAirport\": \"KLSV\",\n                \"destinationAirport\": \"02CL\",\n                \"xp\": 1078\n            },\n            {\n                \"id\": \"ac11afd8-4c99-4077-bdcd-753c68d0459b\",\n                \"created\": \"2023-03-07T20:19:32.211747+00:00\",\n                \"userId\": \"9b6176d9-2377-4f72-b1f2-85f8ec7be935\",\n                \"aircraftId\": \"e59fa7b4-b708-4480-aebd-26659a4f312b\",\n                \"liveryId\": \"d8ed15e3-522d-44c8-9324-42d93961d726\",\n                \"callsign\": \"Orca 7 Heavy\",\n                \"server\": \"Expert Server\",\n                \"dayTime\": 5.6363664,\n                \"nightTime\": 0,\n                \"totalTime\": 5.6363664,\n                \"landingCount\": 0,\n                \"originAirport\": \"KSUU\",\n                \"destinationAirport\": \"KSUU\",\n                \"xp\": 56\n            },\n            {\n                \"id\": \"4d69e4ae-78dd-47df-8458-ec9f9b036018\",\n                \"created\": \"2023-03-07T16:15:20.026366+00:00\",\n                \"userId\": \"9b6176d9-2377-4f72-b1f2-85f8ec7be935\",\n                \"aircraftId\": \"e59fa7b4-b708-4480-aebd-26659a4f312b\",\n                \"liveryId\": \"d8ed15e3-522d-44c8-9324-42d93961d726\",\n                \"callsign\": \"Air Force 6060\",\n                \"server\": \"Raspberry Pi Server\",\n                \"dayTime\": 0,\n                \"nightTime\": 0,\n                \"totalTime\": 0,\n                \"landingCount\": 0,\n                \"originAirport\": null,\n                \"destinationAirport\": null,\n                \"xp\": 0\n            },\n            {\n                \"id\": \"654ffd34-9993-4995-874d-7d5399c206d9\",\n                \"created\": \"2023-03-07T16:09:02.689986+00:00\",\n                \"userId\": \"9b6176d9-2377-4f72-b1f2-85f8ec7be935\",\n                \"aircraftId\": \"e59fa7b4-b708-4480-aebd-26659a4f312b\",\n                \"liveryId\": \"d8ed15e3-522d-44c8-9324-42d93961d726\",\n                \"callsign\": \"Air Force 6060\",\n                \"server\": \"Raspberry Pi Server\",\n                \"dayTime\": 0,\n                \"nightTime\": 0,\n                \"totalTime\": 0,\n                \"landingCount\": 0,\n                \"originAirport\": null,\n                \"destinationAirport\": null,\n                \"xp\": 0\n            }\n        ]\n    }\n}"
+				}
+			]
 		},
 		{
 			"name": "Get All Aircraft Liveries",
@@ -628,47 +700,47 @@
 	],
 	"variable": [
 		{
-			"id": "693b49b8-b77a-449b-b2ec-62af850ae287",
+			"id": "729831b7-3d90-422c-8f2f-7241a6ac80ea",
 			"key": "infiniteUser",
 			"value": "9b6176d9-2377-4f72-b1f2-85f8ec7be935"
 		},
 		{
-			"id": "b29fc435-50ab-446a-a35f-3110d34d1f94",
+			"id": "7a5e52aa-dc70-45a0-b24d-f07635fb8d83",
 			"key": "infiniteTraining",
 			"value": "45173539-5080-4c95-9b93-a24713d96ec8"
 		},
 		{
-			"id": "5cdbea14-546f-42c2-bc01-a6553b044ed5",
+			"id": "deb52dcc-4cd5-4e40-8b0e-8680ea15eaf0",
 			"key": "infiniteExpert",
 			"value": "7e5dcd44-1fb5-49cc-bc2c-a9aab1f6a856"
 		},
 		{
-			"id": "c9966ad1-350c-4cf3-8757-f6d2ffb5bbff",
+			"id": "c8e92750-c91e-4b04-93af-4702febf78ef",
 			"key": "infiniteBeta",
 			"value": "df2a8d19-3a54-4ce5-ae65-0b722186e44c"
 		},
 		{
-			"id": "7843b06a-fe10-4dcf-aef3-9005e4362c76",
+			"id": "c28015f6-a9b5-40cd-99cf-f5444e71faac",
 			"key": "infiniteCasual",
 			"value": "d01006e4-3114-473c-8f69-020b89d02884"
 		},
 		{
-			"id": "a1aa95c3-7c83-41b0-9530-259bb4bdf315",
+			"id": "8e606587-67eb-4152-be32-3f02a6833ec4",
 			"key": "atcSessionID",
 			"value": "b43e734c-2290-4847-bb92-cb42636a725c"
 		},
 		{
-			"id": "69918bd8-ed76-407a-934b-d14d74f01e91",
+			"id": "57331036-62b1-46da-b904-aa522d2237dc",
 			"key": "flightID",
 			"value": "43fa9743-9411-4da1-8bd6-f6d6a35005e0"
 		},
 		{
-			"id": "f0ae983a-26e2-4bef-9d94-5ce7ad542fc7",
+			"id": "f378c582-35d4-4c40-bead-4a20312bb8d3",
 			"key": "aircraftID",
 			"value": "3f78766a-30c8-4d65-95ae-ebc2fb758aac"
 		},
 		{
-			"id": "22649d94-5d10-4972-ba87-c9935f53ab78",
+			"id": "d62febfb-693a-4d49-9c6e-83084e94afe9",
 			"key": "baseURL",
 			"value": "https://api.infiniteflight.com/public/v2"
 		}
