@@ -636,61 +636,61 @@
 	],
 	"auth": {
 		"type": "bearer",
-		"bearer": {}
+		"bearer": {
+			"token": "{{infiniteAuth}}"
+		}
 	},
 	"event": [
 		{
-			"disabled": false,
 			"listen": "prerequest"
 		},
 		{
-			"listen": "test",
-			"disabled": false
+			"listen": "test"
 		}
 	],
 	"variable": [
 		{
-			"id": "eb5fa24e-584e-40b0-9c43-9218efd9ff43",
+			"id": "376f15a2-185e-45e8-abba-f2881b03024e",
 			"key": "infiniteUser",
 			"value": "9b6176d9-2377-4f72-b1f2-85f8ec7be935"
 		},
 		{
-			"id": "8728a7ad-3619-4509-8882-6ef179709694",
+			"id": "fa729989-84d1-4ad4-8a37-28b43915c607",
 			"key": "infiniteTraining",
 			"value": "45173539-5080-4c95-9b93-a24713d96ec8"
 		},
 		{
-			"id": "f3960cad-7fe6-4e80-9cc1-d7c81f5f9f8e",
+			"id": "163baa69-e0af-417a-bd71-beee9b1020f0",
 			"key": "infiniteExpert",
 			"value": "7e5dcd44-1fb5-49cc-bc2c-a9aab1f6a856"
 		},
 		{
-			"id": "2d99558e-1a0a-4591-8415-738e73431fb3",
+			"id": "e92dfe89-3c3a-41f9-aa31-f6c38f85221e",
 			"key": "infiniteBeta",
 			"value": "df2a8d19-3a54-4ce5-ae65-0b722186e44c"
 		},
 		{
-			"id": "5849112a-85a7-40cb-a97e-d74406be2469",
+			"id": "ea945b59-27aa-4173-a624-cdace8ce9f3f",
 			"key": "infiniteCasual",
 			"value": "d01006e4-3114-473c-8f69-020b89d02884"
 		},
 		{
-			"id": "0857badf-82ad-4dca-b0bd-f3bf90c32ab3",
+			"id": "7e7572a2-2c35-4349-8182-0df90154e783",
 			"key": "atcSessionID",
 			"value": "b43e734c-2290-4847-bb92-cb42636a725c"
 		},
 		{
-			"id": "076d6585-d635-4bde-af7c-c7d6cf2b7739",
+			"id": "86288718-0ade-4e61-95ea-0184da9b65f7",
 			"key": "flightID",
 			"value": "43fa9743-9411-4da1-8bd6-f6d6a35005e0"
 		},
 		{
-			"id": "23ce535c-62cb-4132-a6fe-8aeb9c790886",
+			"id": "56216a97-94c3-4fae-823c-9ca28f439159",
 			"key": "aircraftID",
 			"value": "3f78766a-30c8-4d65-95ae-ebc2fb758aac"
 		},
 		{
-			"id": "a56de9d9-e34a-412e-b293-bd7dc4e29268",
+			"id": "093b8967-9712-4fd2-933e-f73cd05936a9",
 			"key": "baseURL",
 			"value": "https://api.infiniteflight.com/public/v2"
 		}
