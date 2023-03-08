@@ -351,7 +351,79 @@
 				},
 				"url": "{{baseURL}}/sessions/{{infiniteExpert}}/atc"
 			},
-			"response": []
+			"response": [
+				{
+					"id": "5dd77e22-c972-4c81-88ce-fa59811924f5",
+					"name": "Get Active ATC Frequencies",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"value": "Bearer {{infiniteAuth}}",
+								"type": "text",
+								"key": "Authorization"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": "{{baseURL}}/sessions/{{infiniteExpert}}/atc"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 08 Mar 2023 17:26:53 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-rate-limit-limit",
+							"value": "1m"
+						},
+						{
+							"key": "x-rate-limit-remaining",
+							"value": "99"
+						},
+						{
+							"key": "x-rate-limit-reset",
+							"value": "2023-03-08T17:27:00.0000000Z"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "7a4cc9289ba8233c-ORD"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"errorCode\": 0,\n    \"result\": [\n        {\n            \"frequencyId\": \"3adee95b-1837-8992-b906-30db932af9fd\",\n            \"userId\": \"86cd9157-5c5b-49ab-8d4b-9baa5aacf2bd\",\n            \"username\": \"David_ZGGG\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"GCLP\",\n            \"type\": 4,\n            \"latitude\": 27.93156,\n            \"longitude\": -15.385593,\n            \"startTime\": \"2023-03-08 17:00:48Z\"\n        },\n        {\n            \"frequencyId\": \"b12ac40c-0ee6-e00c-03cd-3152611ef2e1\",\n            \"userId\": \"4ca88a2f-37a3-43b2-a064-5a6627d96968\",\n            \"username\": \"apple\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"GCLP\",\n            \"type\": 0,\n            \"latitude\": 27.93156,\n            \"longitude\": -15.385593,\n            \"startTime\": \"2023-03-08 17:11:41Z\"\n        },\n        {\n            \"frequencyId\": \"41c4a702-7d6b-8010-dc5f-811f58a158ad\",\n            \"userId\": \"4ca88a2f-37a3-43b2-a064-5a6627d96968\",\n            \"username\": \"apple\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"GCLP\",\n            \"type\": 1,\n            \"latitude\": 27.93156,\n            \"longitude\": -15.385593,\n            \"startTime\": \"2023-03-08 17:11:41Z\"\n        },\n        {\n            \"frequencyId\": \"6af0acaa-6be9-d24d-f2a9-276467460978\",\n            \"userId\": \"dfe4b39b-f884-4c3c-9283-936098f4d8b7\",\n            \"username\": \"Elias_Solberg1\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"FAOR\",\n            \"type\": 0,\n            \"latitude\": -26.138588,\n            \"longitude\": 28.246487,\n            \"startTime\": \"2023-03-08 17:26:41Z\"\n        },\n        {\n            \"frequencyId\": \"2630b729-4d36-4f4c-35a3-df68b2d2e83b\",\n            \"userId\": \"dfe4b39b-f884-4c3c-9283-936098f4d8b7\",\n            \"username\": \"Elias_Solberg1\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"FAOR\",\n            \"type\": 1,\n            \"latitude\": -26.138588,\n            \"longitude\": 28.246487,\n            \"startTime\": \"2023-03-08 17:26:41Z\"\n        }\n    ]\n}"
+				}
+			]
 		},
 		{
 			"name": "Get User Grade",
@@ -772,48 +844,48 @@
 	],
 	"variable": [
 		{
-			"id": "014fdd5e-f581-4b84-8484-31c3bf6b3eb9",
+			"id": "a6b72b82-be23-4a5d-8ae0-990085bb1cea",
 			"key": "infiniteUser",
 			"value": "9b6176d9-2377-4f72-b1f2-85f8ec7be935"
 		},
 		{
-			"id": "02569b8f-4f53-441c-bcc9-4f5dd4823571",
+			"id": "4c35aa07-8faa-4e34-91fe-1fca7fa2eda6",
 			"key": "infiniteTraining",
 			"value": "45173539-5080-4c95-9b93-a24713d96ec8"
 		},
 		{
-			"id": "a8f8eb54-c304-47a3-a569-381b54fc5b68",
+			"id": "a4538246-b34e-4371-8a24-8572ce538461",
 			"key": "infiniteExpert",
 			"value": "df2a8d19-3a54-4ce5-ae65-0b722186e44c"
 		},
 		{
-			"id": "fdfa8ec9-6dad-484f-bff8-73296046ef9c",
+			"id": "0b90742e-1c7e-45cf-acc9-5fdb903baff6",
 			"key": "infiniteBeta",
 			"value": "df2a8d19-3a54-4ce5-ae65-0b722186e44c",
 			"disabled": true
 		},
 		{
-			"id": "5fa89ce4-a139-46f5-82cb-5ef26434b48a",
+			"id": "42392130-531d-4ead-82da-44402ab38bb9",
 			"key": "infiniteCasual",
 			"value": "d01006e4-3114-473c-8f69-020b89d02884"
 		},
 		{
-			"id": "74f3b9f1-1fb8-40f8-8c70-5be85c5da787",
+			"id": "c4bf4f63-fd54-4af7-b78d-12e57d452097",
 			"key": "atcSessionID",
 			"value": "b43e734c-2290-4847-bb92-cb42636a725c"
 		},
 		{
-			"id": "d5a7f86c-91bd-45e5-902c-33fec6cd181d",
+			"id": "bb55a35c-a806-427d-87d5-e2a0c6cd1880",
 			"key": "flightID",
 			"value": "43fa9743-9411-4da1-8bd6-f6d6a35005e0"
 		},
 		{
-			"id": "d5764f19-9655-4e91-8d9f-1f5901436387",
+			"id": "bf22dbcf-f537-4be3-9bed-4e5b6a0933be",
 			"key": "aircraftID",
 			"value": "3f78766a-30c8-4d65-95ae-ebc2fb758aac"
 		},
 		{
-			"id": "db96c569-5e2b-4d43-8f8e-70e57ad6a732",
+			"id": "63e6a167-c1c4-4e64-8969-55ff2ad7e88b",
 			"key": "baseURL",
 			"value": "https://api.infiniteflight.com/public/v2"
 		}
