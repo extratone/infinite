@@ -907,6 +907,73 @@
 					"cookie": [],
 					"responseTime": "0",
 					"body": "{\n    \"errorCode\": 0,\n    \"result\": {\n        \"pageIndex\": 1,\n        \"totalPages\": 2,\n        \"totalCount\": 14,\n        \"hasPreviousPage\": false,\n        \"hasNextPage\": true,\n        \"data\": [\n            {\n                \"id\": \"12771694-13d7-46f2-a8e9-1e804767f8bf\",\n                \"atcSessionGroupId\": \"8662b92d-0ab3-4c1a-ac47-a66155027d90\",\n                \"facility\": {\n                    \"id\": \"06c28fd7-b3f1-d173-651c-5d798a9dd6c9\",\n                    \"airportIcao\": null,\n                    \"latitude\": 38.748971462249756,\n                    \"longitude\": -90.37041664123535,\n                    \"frequencyType\": 6\n                },\n                \"created\": \"2022-12-04T16:17:47.586378+00:00\",\n                \"updated\": \"2022-12-04T16:20:30.236574+00:00\",\n                \"operations\": 0,\n                \"totalTime\": 2.7108366\n            },\n            {\n                \"id\": \"c0397864-3f10-4389-bede-18e37d1d1d73\",\n                \"atcSessionGroupId\": \"2b51f7b6-2810-4912-be5c-11eb5c87168f\",\n                \"facility\": {\n                    \"id\": \"2f266234-6862-1cba-cfff-9bca8d3ec5ed\",\n                    \"airportIcao\": \"EGLL\",\n                    \"latitude\": 51.47122573852539,\n                    \"longitude\": -0.46088065207004547,\n                    \"frequencyType\": 4\n                },\n                \"created\": \"2022-12-04T15:53:36.305141+00:00\",\n                \"updated\": \"2022-12-04T15:53:40.563332+00:00\",\n                \"operations\": 0,\n                \"totalTime\": 0.07096985\n            },\n            {\n                \"id\": \"827a8658-369c-4ae8-ad1b-ca2800240d44\",\n                \"atcSessionGroupId\": \"ce64b936-ab9d-487b-90f4-fe3f38935a02\",\n                \"facility\": {\n                    \"id\": \"2f266234-6862-1cba-cfff-9bca8d3ec5ed\",\n                    \"airportIcao\": \"EGLL\",\n                    \"latitude\": 51.47122573852539,\n                    \"longitude\": -0.46088065207004547,\n                    \"frequencyType\": 4\n                },\n                \"created\": \"2022-12-04T15:47:46.909299+00:00\",\n                \"updated\": \"2022-12-04T15:53:36.941278+00:00\",\n                \"operations\": 18,\n                \"totalTime\": 5.833866316666667\n            },\n            {\n                \"id\": \"60f4d0e9-ece8-4d34-af49-b23c6f852502\",\n                \"atcSessionGroupId\": \"dea234da-c5be-4492-a98e-af8a343a4d7b\",\n                \"facility\": {\n                    \"id\": \"8bd484b5-9b2d-1aaf-5465-73e22222ab9b\",\n                    \"airportIcao\": \"OTHH\",\n                    \"latitude\": 25.274500846862793,\n                    \"longitude\": 51.60768795013428,\n                    \"frequencyType\": 1\n                },\n                \"created\": \"2022-12-04T15:32:59.266719+00:00\",\n                \"updated\": \"2022-12-04T15:35:03.068208+00:00\",\n                \"operations\": 0,\n                \"totalTime\": 2.06335815\n            },\n            {\n                \"id\": \"63205b46-7fc3-404e-85eb-61d64aa4daa5\",\n                \"atcSessionGroupId\": \"dea234da-c5be-4492-a98e-af8a343a4d7b\",\n                \"facility\": {\n                    \"id\": \"59036cf4-a81a-7958-a1b4-025993263cee\",\n                    \"airportIcao\": \"OTHH\",\n                    \"latitude\": 25.274500846862793,\n                    \"longitude\": 51.60768795013428,\n                    \"frequencyType\": 0\n                },\n                \"created\": \"2022-12-04T15:32:59.264256+00:00\",\n                \"updated\": \"2022-12-04T15:35:03.067083+00:00\",\n                \"operations\": 0,\n                \"totalTime\": 2.06338045\n            },\n            {\n                \"id\": \"41e8bfbf-d09d-415b-b3bb-3a40ba2a6ff9\",\n                \"atcSessionGroupId\": \"93c65d76-07b6-4ae4-a07b-dbf61a6a9db2\",\n                \"facility\": {\n                    \"id\": \"53d311e6-0a6f-e499-8f5f-e6549d4de77f\",\n                    \"airportIcao\": \"KSTL\",\n                    \"latitude\": 38.748971462249756,\n                    \"longitude\": -90.37041664123535,\n                    \"frequencyType\": 5\n                },\n                \"created\": \"2022-12-04T15:31:19.068921+00:00\",\n                \"updated\": \"2022-12-04T15:31:42.01066+00:00\",\n                \"operations\": 0,\n                \"totalTime\": 0.38236231666666665\n            },\n            {\n                \"id\": \"2263fead-2c2a-45e3-8565-48eaf5ee256f\",\n                \"atcSessionGroupId\": \"93c65d76-07b6-4ae4-a07b-dbf61a6a9db2\",\n                \"facility\": {\n                    \"id\": \"eef7a013-6ef3-8a1f-3b7b-1fd4ff952bdf\",\n                    \"airportIcao\": \"KSTL\",\n                    \"latitude\": 38.748971462249756,\n                    \"longitude\": -90.37041664123535,\n                    \"frequencyType\": 4\n                },\n                \"created\": \"2022-12-04T15:31:19.06487+00:00\",\n                \"updated\": \"2022-12-04T15:31:42.009387+00:00\",\n                \"operations\": 0,\n                \"totalTime\": 0.38240861666666665\n            },\n            {\n                \"id\": \"272a1f95-8990-42fe-bc12-6b7f714ec6ec\",\n                \"atcSessionGroupId\": \"493f86ef-66e6-4992-94e1-bc70c15bdcf3\",\n                \"facility\": {\n                    \"id\": \"8bd484b5-9b2d-1aaf-5465-73e22222ab9b\",\n                    \"airportIcao\": \"OTHH\",\n                    \"latitude\": 25.274500846862793,\n                    \"longitude\": 51.60768795013428,\n                    \"frequencyType\": 1\n                },\n                \"created\": \"2022-12-04T15:15:12.065445+00:00\",\n                \"updated\": \"2022-12-04T15:34:49.512916+00:00\",\n                \"operations\": 1,\n                \"totalTime\": 19.624124516666665\n            },\n            {\n                \"id\": \"16ef6fd9-1cf3-431d-8e51-8c84286af9fb\",\n                \"atcSessionGroupId\": \"493f86ef-66e6-4992-94e1-bc70c15bdcf3\",\n                \"facility\": {\n                    \"id\": \"59036cf4-a81a-7958-a1b4-025993263cee\",\n                    \"airportIcao\": \"OTHH\",\n                    \"latitude\": 25.274500846862793,\n                    \"longitude\": 51.60768795013428,\n                    \"frequencyType\": 0\n                },\n                \"created\": \"2022-12-04T15:15:12.062837+00:00\",\n                \"updated\": \"2022-12-04T15:34:49.512889+00:00\",\n                \"operations\": 1,\n                \"totalTime\": 19.624167533333335\n            },\n            {\n                \"id\": \"b43e734c-2290-4847-bb92-cb42636a725c\",\n                \"atcSessionGroupId\": \"842f4530-4279-49d0-9d8f-f28a1241fa0c\",\n                \"facility\": {\n                    \"id\": \"25465e16-773c-de82-f370-0332dc1ad900\",\n                    \"airportIcao\": \"KSMO\",\n                    \"latitude\": 34.015846252441406,\n                    \"longitude\": -118.45132827758789,\n                    \"frequencyType\": 4\n                },\n                \"created\": \"2022-11-30T20:00:00.169275+00:00\",\n                \"updated\": \"2022-11-30T20:04:21.527304+00:00\",\n                \"operations\": 11,\n                \"totalTime\": 4.35596715\n            }\n        ]\n    }\n}"
+				},
+				{
+					"id": "5539186f-e541-4a85-bc6f-c52191ef60ab",
+					"name": "Get User ATC Sessions",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"value": "Bearer {{infiniteAuth}}",
+								"type": "text",
+								"key": "Authorization"
+							}
+						],
+						"url": "{{baseURL}}/users/{{infiniteUser}}/atc"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 08 Mar 2023 17:29:11 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-rate-limit-limit",
+							"value": "1m"
+						},
+						{
+							"key": "x-rate-limit-remaining",
+							"value": "99"
+						},
+						{
+							"key": "x-rate-limit-reset",
+							"value": "2023-03-08T17:30:00.0000000Z"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "7a4ccc861db0233c-ORD"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"errorCode\": 0,\n    \"result\": {\n        \"pageIndex\": 1,\n        \"totalPages\": 3,\n        \"totalCount\": 21,\n        \"hasPreviousPage\": false,\n        \"hasNextPage\": true,\n        \"data\": [\n            {\n                \"id\": \"a3cf7b9a-00de-4b21-9e53-628b55136fac\",\n                \"atcSessionGroupId\": \"e9775055-f8bb-430f-a2cb-93b96fc39035\",\n                \"facility\": {\n                    \"id\": \"c61ba092-d87e-5b70-ed27-1fbb549bc84e\",\n                    \"airportIcao\": \"KJFK\",\n                    \"latitude\": 40.63959550857544,\n                    \"longitude\": -73.7769365310669,\n                    \"frequencyType\": 5\n                },\n                \"created\": \"2023-01-19T20:27:24.957542+00:00\",\n                \"updated\": \"2023-01-19T20:42:46.434893+00:00\",\n                \"operations\": 0,\n                \"totalTime\": 15.35795585\n            },\n            {\n                \"id\": \"9a6abbc0-22d7-4e4e-90be-c24862d2c391\",\n                \"atcSessionGroupId\": \"e9775055-f8bb-430f-a2cb-93b96fc39035\",\n                \"facility\": {\n                    \"id\": \"e54f190a-88a0-c61d-0ec0-3a2fea5f8fe2\",\n                    \"airportIcao\": \"KJFK\",\n                    \"latitude\": 40.64014387130737,\n                    \"longitude\": -73.77653408050537,\n                    \"frequencyType\": 4\n                },\n                \"created\": \"2023-01-19T20:27:24.954469+00:00\",\n                \"updated\": \"2023-01-19T20:42:46.433651+00:00\",\n                \"operations\": 5,\n                \"totalTime\": 15.357986366666667\n            },\n            {\n                \"id\": \"74cd23a1-6731-44f2-9b5b-b312502b0f85\",\n                \"atcSessionGroupId\": \"df209258-ac4e-4d0f-a0fb-235c27405c2b\",\n                \"facility\": {\n                    \"id\": \"563001a1-bf0e-0832-2caa-b53fac5af0d0\",\n                    \"airportIcao\": \"KPHX\",\n                    \"latitude\": 33.433579762776695,\n                    \"longitude\": -112.01180521647136,\n                    \"frequencyType\": 1\n                },\n                \"created\": \"2023-01-01T21:08:59.697066+00:00\",\n                \"updated\": \"2023-01-01T21:11:12.535193+00:00\",\n                \"operations\": 0,\n                \"totalTime\": 2.2139687833333332\n            },\n            {\n                \"id\": \"dbfef536-6ca5-4201-a318-1093185c5249\",\n                \"atcSessionGroupId\": \"df209258-ac4e-4d0f-a0fb-235c27405c2b\",\n                \"facility\": {\n                    \"id\": \"f96c00a9-2013-e0e2-45d9-aa7f0ebda826\",\n                    \"airportIcao\": \"KPHX\",\n                    \"latitude\": 33.433579762776695,\n                    \"longitude\": -112.01180521647136,\n                    \"frequencyType\": 0\n                },\n                \"created\": \"2023-01-01T21:08:59.692906+00:00\",\n                \"updated\": \"2023-01-01T21:11:12.533581+00:00\",\n                \"operations\": 0,\n                \"totalTime\": 2.21401125\n            },\n            {\n                \"id\": \"df31e87c-8324-4552-a67f-03f27520caba\",\n                \"atcSessionGroupId\": \"7d74dc8f-adf7-48da-ab62-965966cb595e\",\n                \"facility\": {\n                    \"id\": \"bd7e58d7-778a-e8cd-e961-1910f8c21477\",\n                    \"airportIcao\": \"EGLL\",\n                    \"latitude\": 51.47122573852539,\n                    \"longitude\": -0.46088065207004547,\n                    \"frequencyType\": 5\n                },\n                \"created\": \"2022-12-27T13:34:55.463471+00:00\",\n                \"updated\": \"2022-12-27T13:38:02.950109+00:00\",\n                \"operations\": 0,\n                \"totalTime\": 3.1247773\n            },\n            {\n                \"id\": \"b033d892-9a68-45bb-91e2-72389b2e3934\",\n                \"atcSessionGroupId\": \"e325bd61-398c-4a37-aa4a-d9af17baea0c\",\n                \"facility\": {\n                    \"id\": \"9e1f13c5-6c8a-3752-1a1a-696ed320351a\",\n                    \"airportIcao\": \"KATL\",\n                    \"latitude\": 33.63662986755371,\n                    \"longitude\": -84.42801818847656,\n                    \"frequencyType\": 5\n                },\n                \"created\": \"2022-12-24T17:22:18.39549+00:00\",\n                \"updated\": \"2022-12-24T17:24:10.249237+00:00\",\n                \"operations\": 0,\n                \"totalTime\": 1.8642291166666667\n            },\n            {\n                \"id\": \"dc2a3a1f-1cc8-4b2f-9ac5-3a5e844b9bd9\",\n                \"atcSessionGroupId\": \"e325bd61-398c-4a37-aa4a-d9af17baea0c\",\n                \"facility\": {\n                    \"id\": \"64418419-4813-d6f1-13a9-b68bb26553cc\",\n                    \"airportIcao\": \"KATL\",\n                    \"latitude\": 33.63662986755371,\n                    \"longitude\": -84.42801818847656,\n                    \"frequencyType\": 4\n                },\n                \"created\": \"2022-12-24T17:22:18.391982+00:00\",\n                \"updated\": \"2022-12-24T17:24:10.247922+00:00\",\n                \"operations\": 0,\n                \"totalTime\": 1.8642656666666666\n            },\n            {\n                \"id\": \"12771694-13d7-46f2-a8e9-1e804767f8bf\",\n                \"atcSessionGroupId\": \"8662b92d-0ab3-4c1a-ac47-a66155027d90\",\n                \"facility\": {\n                    \"id\": \"06c28fd7-b3f1-d173-651c-5d798a9dd6c9\",\n                    \"airportIcao\": null,\n                    \"latitude\": 38.748971462249756,\n                    \"longitude\": -90.37041664123535,\n                    \"frequencyType\": 6\n                },\n                \"created\": \"2022-12-04T16:17:47.586378+00:00\",\n                \"updated\": \"2022-12-04T16:20:30.236574+00:00\",\n                \"operations\": 0,\n                \"totalTime\": 2.7108366\n            },\n            {\n                \"id\": \"c0397864-3f10-4389-bede-18e37d1d1d73\",\n                \"atcSessionGroupId\": \"2b51f7b6-2810-4912-be5c-11eb5c87168f\",\n                \"facility\": {\n                    \"id\": \"2f266234-6862-1cba-cfff-9bca8d3ec5ed\",\n                    \"airportIcao\": \"EGLL\",\n                    \"latitude\": 51.47122573852539,\n                    \"longitude\": -0.46088065207004547,\n                    \"frequencyType\": 4\n                },\n                \"created\": \"2022-12-04T15:53:36.305141+00:00\",\n                \"updated\": \"2022-12-04T15:53:40.563332+00:00\",\n                \"operations\": 0,\n                \"totalTime\": 0.07096985\n            },\n            {\n                \"id\": \"827a8658-369c-4ae8-ad1b-ca2800240d44\",\n                \"atcSessionGroupId\": \"ce64b936-ab9d-487b-90f4-fe3f38935a02\",\n                \"facility\": {\n                    \"id\": \"2f266234-6862-1cba-cfff-9bca8d3ec5ed\",\n                    \"airportIcao\": \"EGLL\",\n                    \"latitude\": 51.47122573852539,\n                    \"longitude\": -0.46088065207004547,\n                    \"frequencyType\": 4\n                },\n                \"created\": \"2022-12-04T15:47:46.909299+00:00\",\n                \"updated\": \"2022-12-04T15:53:36.941278+00:00\",\n                \"operations\": 18,\n                \"totalTime\": 5.833866316666667\n            }\n        ]\n    }\n}"
 				}
 			]
 		},
@@ -1023,48 +1090,48 @@
 	],
 	"variable": [
 		{
-			"id": "eecf4514-2a59-45a3-9f13-2a3137748718",
+			"id": "b5b454ae-2c81-4491-9689-a507d3c064fe",
 			"key": "infiniteUser",
 			"value": "9b6176d9-2377-4f72-b1f2-85f8ec7be935"
 		},
 		{
-			"id": "6bc28a26-6ac5-4718-9d08-208950bacd95",
+			"id": "2e4dd982-46a6-447b-b1d6-3c0d282bd00c",
 			"key": "infiniteTraining",
 			"value": "45173539-5080-4c95-9b93-a24713d96ec8"
 		},
 		{
-			"id": "8252f410-ec44-40fd-98fb-c5c8df6fb101",
+			"id": "51a25ea2-3aa4-4518-a3bd-b38ef0632749",
 			"key": "infiniteExpert",
 			"value": "df2a8d19-3a54-4ce5-ae65-0b722186e44c"
 		},
 		{
-			"id": "a92f4326-15f0-41fa-904f-5b62ef7c359b",
+			"id": "d251f280-4544-492b-a463-a733b1c9f485",
 			"key": "infiniteBeta",
 			"value": "df2a8d19-3a54-4ce5-ae65-0b722186e44c",
 			"disabled": true
 		},
 		{
-			"id": "62b3b451-26cf-4163-9064-4aa1225b944e",
+			"id": "c0b17d67-17ae-4908-a6f6-0606a27b5aca",
 			"key": "infiniteCasual",
 			"value": "d01006e4-3114-473c-8f69-020b89d02884"
 		},
 		{
-			"id": "5e497cf0-d75e-47d2-9c65-d0ce18ad0734",
+			"id": "99748a48-5039-4d97-8cab-a7d83df0a706",
 			"key": "atcSessionID",
 			"value": "b43e734c-2290-4847-bb92-cb42636a725c"
 		},
 		{
-			"id": "4170690f-247e-4d78-a4d1-e8553c27c9cb",
+			"id": "717ffc42-1851-4d66-9508-46757b57cd6d",
 			"key": "flightID",
 			"value": "43fa9743-9411-4da1-8bd6-f6d6a35005e0"
 		},
 		{
-			"id": "6a49d8b5-82b7-4890-8572-f5e5987d9a6e",
+			"id": "bfa91381-6c45-43e4-ad57-0518c2eb8d74",
 			"key": "aircraftID",
 			"value": "3f78766a-30c8-4d65-95ae-ebc2fb758aac"
 		},
 		{
-			"id": "9e7ec3a9-721a-4bef-814c-e2edcc63f0cb",
+			"id": "914fc4ab-d724-48f5-8209-11cca5287ac6",
 			"key": "baseURL",
 			"value": "https://api.infiniteflight.com/public/v2"
 		}
