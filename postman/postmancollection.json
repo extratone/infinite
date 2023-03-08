@@ -42,7 +42,7 @@
 					"mode": "urlencoded",
 					"urlencoded": []
 				},
-				"url": "https:///public/v2/users/%7B%7BinfiniteUser%7D%7D/flights"
+				"url": "{{baseURL}}/users/{{infiniteUser}}/flights"
 			},
 			"response": []
 		},
@@ -628,47 +628,47 @@
 	],
 	"variable": [
 		{
-			"id": "748c7811-9492-476c-bb1b-20f02fbcf93d",
+			"id": "693b49b8-b77a-449b-b2ec-62af850ae287",
 			"key": "infiniteUser",
 			"value": "9b6176d9-2377-4f72-b1f2-85f8ec7be935"
 		},
 		{
-			"id": "8a4e2812-2e38-4c9a-a8d9-0adce3b797f8",
+			"id": "b29fc435-50ab-446a-a35f-3110d34d1f94",
 			"key": "infiniteTraining",
 			"value": "45173539-5080-4c95-9b93-a24713d96ec8"
 		},
 		{
-			"id": "12c2f43f-e8dc-48f2-8c06-fb8ce066c1d5",
+			"id": "5cdbea14-546f-42c2-bc01-a6553b044ed5",
 			"key": "infiniteExpert",
 			"value": "7e5dcd44-1fb5-49cc-bc2c-a9aab1f6a856"
 		},
 		{
-			"id": "28a18314-6e05-4611-9011-9f39d616ffa5",
+			"id": "c9966ad1-350c-4cf3-8757-f6d2ffb5bbff",
 			"key": "infiniteBeta",
 			"value": "df2a8d19-3a54-4ce5-ae65-0b722186e44c"
 		},
 		{
-			"id": "c1da21d7-5f3c-4547-90ae-bb4fd99961f2",
+			"id": "7843b06a-fe10-4dcf-aef3-9005e4362c76",
 			"key": "infiniteCasual",
 			"value": "d01006e4-3114-473c-8f69-020b89d02884"
 		},
 		{
-			"id": "a5f96bc4-5337-41a7-bedd-86287260a575",
+			"id": "a1aa95c3-7c83-41b0-9530-259bb4bdf315",
 			"key": "atcSessionID",
 			"value": "b43e734c-2290-4847-bb92-cb42636a725c"
 		},
 		{
-			"id": "83f03697-c201-4ca7-ba1f-6174499a75ce",
+			"id": "69918bd8-ed76-407a-934b-d14d74f01e91",
 			"key": "flightID",
 			"value": "43fa9743-9411-4da1-8bd6-f6d6a35005e0"
 		},
 		{
-			"id": "2a6220d8-7f0c-4450-8560-5b325b297cfb",
+			"id": "f0ae983a-26e2-4bef-9d94-5ce7ad542fc7",
 			"key": "aircraftID",
 			"value": "3f78766a-30c8-4d65-95ae-ebc2fb758aac"
 		},
 		{
-			"id": "d67a8f9d-8349-40ce-85d4-9d4bc9cd4e14",
+			"id": "22649d94-5d10-4972-ba87-c9935f53ab78",
 			"key": "baseURL",
 			"value": "https://api.infiniteflight.com/public/v2"
 		}
