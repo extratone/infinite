@@ -730,7 +730,79 @@
 				},
 				"url": "{{baseURL}}/tracks"
 			},
-			"response": []
+			"response": [
+				{
+					"id": "38cbefbd-c93b-48d7-b0ec-f8608b885337",
+					"name": "Get Oceanic Tracks",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": " Bearer {{infiniteAuth}}"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": "{{baseURL}}/tracks"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 08 Mar 2023 17:28:34 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-rate-limit-limit",
+							"value": "1m"
+						},
+						{
+							"key": "x-rate-limit-remaining",
+							"value": "95"
+						},
+						{
+							"key": "x-rate-limit-reset",
+							"value": "2023-03-08T17:29:00.0000000Z"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "7a4ccb9f0f15233c-ORD"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"errorCode\": 0,\n    \"result\": [\n        {\n            \"name\": \"A\",\n            \"path\": [\n                \"SUNOT\",\n                \"57/20\",\n                \"57/30\",\n                \"56/40\",\n                \"54/50\",\n                \"NEEKO\"\n            ],\n            \"eastLevels\": null,\n            \"westLevels\": [\n                340,\n                350,\n                360,\n                370,\n                380,\n                390\n            ],\n            \"type\": \"North Atlantic Tracks\",\n            \"lastSeen\": \"2023-03-08T17:28:05.232483Z\"\n        },\n        {\n            \"name\": \"B\",\n            \"path\": [\n                \"PIKIL\",\n                \"56/20\",\n                \"56/30\",\n                \"55/40\",\n                \"53/50\",\n                \"RIKAL\"\n            ],\n            \"eastLevels\": null,\n            \"westLevels\": [\n                340,\n                350,\n                360,\n                370,\n                380,\n                390\n            ],\n            \"type\": \"North Atlantic Tracks\",\n            \"lastSeen\": \"2023-03-08T17:28:05.2328669Z\"\n        },\n        {\n            \"name\": \"C\",\n            \"path\": [\n                \"ETARI\",\n                \"55.5/20\",\n                \"55.5/30\",\n                \"54.5/40\",\n                \"52.5/50\",\n                \"SAXAN\"\n            ],\n            \"eastLevels\": null,\n            \"westLevels\": [\n                350,\n                360,\n                370,\n                380,\n                390\n            ],\n            \"type\": \"North Atlantic Tracks\",\n            \"lastSeen\": \"2023-03-08T17:28:05.2331843Z\"\n        },\n        {\n            \"name\": \"D\",\n            \"path\": [\n                \"RESNO\",\n                \"55/20\",\n                \"55/30\",\n                \"54/40\",\n                \"52/50\",\n                \"TUDEP\"\n            ],\n            \"eastLevels\": null,\n            \"westLevels\": [\n                340,\n                350,\n                360,\n                370,\n                380,\n                390\n            ],\n            \"type\": \"North Atlantic Tracks\",\n            \"lastSeen\": \"2023-03-08T17:28:05.2331896Z\"\n        },\n        {\n            \"name\": \"E\",\n            \"path\": [\n                \"VENER\",\n                \"54.5/20\",\n                \"54.5/30\",\n                \"53.5/40\",\n                \"51.5/50\",\n                \"UMESI\"\n            ],\n            \"eastLevels\": null,\n            \"westLevels\": [\n                350,\n                360,\n                370,\n                380,\n                390\n            ],\n            \"type\": \"North Atlantic Tracks\",\n            \"lastSeen\": \"2023-03-08T17:28:05.2331903Z\"\n        },\n        {\n            \"name\": \"F\",\n            \"path\": [\n                \"DOGAL\",\n                \"54/20\",\n                \"54/30\",\n                \"53/40\",\n                \"51/50\",\n                \"ALLRY\"\n            ],\n            \"eastLevels\": null,\n            \"westLevels\": [\n                340,\n                350,\n                360,\n                370,\n                380,\n                390\n            ],\n            \"type\": \"North Atlantic Tracks\",\n            \"lastSeen\": \"2023-03-08T17:28:05.2331933Z\"\n        },\n        {\n            \"name\": \"G\",\n            \"path\": [\n                \"MALOT\",\n                \"53/20\",\n                \"53/30\",\n                \"52/40\",\n                \"50/50\",\n                \"ELSIR\"\n            ],\n            \"eastLevels\": null,\n            \"westLevels\": [\n                340,\n                350,\n                360,\n                370,\n                380,\n                390\n            ],\n            \"type\": \"North Atlantic Tracks\",\n            \"lastSeen\": \"2023-03-08T17:28:05.2331944Z\"\n        },\n        {\n            \"name\": \"T\",\n            \"path\": [\n                \"ALLRY\",\n                \"51/50\",\n                \"53/40\",\n                \"54/30\",\n                \"55/20\",\n                \"RESNO\",\n                \"NETKI\"\n            ],\n            \"eastLevels\": [\n                340,\n                350,\n                360,\n                370,\n                380,\n                390,\n                400\n            ],\n            \"westLevels\": null,\n            \"type\": \"North Atlantic Tracks\",\n            \"lastSeen\": \"2023-03-08T17:28:05.233195Z\"\n        },\n        {\n            \"name\": \"U\",\n            \"path\": [\n                \"ELSIR\",\n                \"50/50\",\n                \"52/40\",\n                \"53/30\",\n                \"54/20\",\n                \"DOGAL\",\n                \"BEXET\"\n            ],\n            \"eastLevels\": [\n                340,\n                350,\n                360,\n                370,\n                380,\n                390,\n                400\n            ],\n            \"westLevels\": null,\n            \"type\": \"North Atlantic Tracks\",\n            \"lastSeen\": \"2023-03-08T17:28:05.2331959Z\"\n        },\n        {\n            \"name\": \"V\",\n            \"path\": [\n                \"JOOPY\",\n                \"49/50\",\n                \"51/40\",\n                \"52/30\",\n                \"53/20\",\n                \"MALOT\",\n                \"GISTI\"\n            ],\n            \"eastLevels\": [\n                340,\n                350,\n                360,\n                370,\n                380,\n                390,\n                400\n            ],\n            \"westLevels\": null,\n            \"type\": \"North Atlantic Tracks\",\n            \"lastSeen\": \"2023-03-08T17:28:05.2331966Z\"\n        },\n        {\n            \"name\": \"W\",\n            \"path\": [\n                \"NICSO\",\n                \"48/50\",\n                \"50/40\",\n                \"51/30\",\n                \"52/20\",\n                \"LIMRI\",\n                \"XETBO\"\n            ],\n            \"eastLevels\": [\n                340,\n                350,\n                360,\n                370,\n                380,\n                390,\n                400\n            ],\n            \"westLevels\": null,\n            \"type\": \"North Atlantic Tracks\",\n            \"lastSeen\": \"2023-03-08T17:28:05.2331976Z\"\n        },\n        {\n            \"name\": \"X\",\n            \"path\": [\n                \"PORTI\",\n                \"47/50\",\n                \"49/40\",\n                \"50/30\",\n                \"51/20\",\n                \"DINIM\",\n                \"ELSOX\"\n            ],\n            \"eastLevels\": [\n                340,\n                350,\n                360,\n                370,\n                380,\n                390,\n                400\n            ],\n            \"westLevels\": null,\n            \"type\": \"North Atlantic Tracks\",\n            \"lastSeen\": \"2023-03-08T17:28:05.2331984Z\"\n        },\n        {\n            \"name\": \"Y\",\n            \"path\": [\n                \"SUPRY\",\n                \"46/50\",\n                \"48/40\",\n                \"49/30\",\n                \"50/20\",\n                \"SOMAX\",\n                \"ATSUR\"\n            ],\n            \"eastLevels\": [\n                340,\n                350,\n                360,\n                370,\n                380,\n                390,\n                400\n            ],\n            \"westLevels\": null,\n            \"type\": \"North Atlantic Tracks\",\n            \"lastSeen\": \"2023-03-08T17:28:05.2331992Z\"\n        },\n        {\n            \"name\": \"Z\",\n            \"path\": [\n                \"DOVEY\",\n                \"42/60\",\n                \"44/50\",\n                \"47/40\",\n                \"48/30\",\n                \"49/20\",\n                \"BEDRA\",\n                \"NASBA\"\n            ],\n            \"eastLevels\": [\n                340,\n                360,\n                380,\n                400\n            ],\n            \"westLevels\": null,\n            \"type\": \"North Atlantic Tracks\",\n            \"lastSeen\": \"2023-03-08T17:28:05.2332002Z\"\n        }\n    ]\n}"
+				}
+			]
 		},
 		{
 			"name": "Get User ATC Sessions",
@@ -966,48 +1038,48 @@
 	],
 	"variable": [
 		{
-			"id": "622a38cd-5569-4b68-bf8a-12cc0a3a714a",
+			"id": "9d62bf01-02d3-4a2c-8642-5d4e216a4a17",
 			"key": "infiniteUser",
 			"value": "9b6176d9-2377-4f72-b1f2-85f8ec7be935"
 		},
 		{
-			"id": "e3dfa506-7b71-49f1-a377-cc7c57321fe9",
+			"id": "741bcdf4-ae18-4644-a638-b5d5d6a2db6d",
 			"key": "infiniteTraining",
 			"value": "45173539-5080-4c95-9b93-a24713d96ec8"
 		},
 		{
-			"id": "456680b6-ab19-4c5a-9b5d-6eb6135695ca",
+			"id": "a1b13bf8-5a9b-45a8-9a18-daca3fd6fe84",
 			"key": "infiniteExpert",
 			"value": "df2a8d19-3a54-4ce5-ae65-0b722186e44c"
 		},
 		{
-			"id": "97dd1176-d9be-40d8-913c-6466b6a2bb49",
+			"id": "e6ff7ead-47af-4dfe-b7c8-6f77eaf0aecd",
 			"key": "infiniteBeta",
 			"value": "df2a8d19-3a54-4ce5-ae65-0b722186e44c",
 			"disabled": true
 		},
 		{
-			"id": "368658e3-6132-4405-ad02-6e98dc9e1dca",
+			"id": "cd3437b3-4ff5-40d8-ac88-32140f2c24d0",
 			"key": "infiniteCasual",
 			"value": "d01006e4-3114-473c-8f69-020b89d02884"
 		},
 		{
-			"id": "ef0a3c4d-46ed-4a15-9e34-5f977a5e1aff",
+			"id": "cca84e6a-9a48-493d-855d-11dffe164175",
 			"key": "atcSessionID",
 			"value": "b43e734c-2290-4847-bb92-cb42636a725c"
 		},
 		{
-			"id": "7dd35063-709f-400b-9354-3fcfd5a33df1",
+			"id": "b652e45c-26fb-4d43-8d3b-bfaf66abee4c",
 			"key": "flightID",
 			"value": "43fa9743-9411-4da1-8bd6-f6d6a35005e0"
 		},
 		{
-			"id": "873935df-87bf-40f6-a69c-5fe182689baa",
+			"id": "6ac5cb89-fe6c-4e7a-bfba-d990c8a8f47f",
 			"key": "aircraftID",
 			"value": "3f78766a-30c8-4d65-95ae-ebc2fb758aac"
 		},
 		{
-			"id": "e77c7b9a-ce5a-48a0-bd00-866eb71076d8",
+			"id": "801c0368-c2aa-418c-9c03-ddd4f02f01d7",
 			"key": "baseURL",
 			"value": "https://api.infiniteflight.com/public/v2"
 		}
