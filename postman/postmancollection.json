@@ -616,7 +616,7 @@
 					"mode": "urlencoded",
 					"urlencoded": []
 				},
-				"url": "{{baseURL}}/sessions/{{infiniteExpert}}/airport/klax/atis"
+				"url": "{{baseURL}}/sessions/{{infiniteExpert}}/airport/egll/atis"
 			},
 			"response": []
 		},
@@ -894,48 +894,48 @@
 	],
 	"variable": [
 		{
-			"id": "bd0257f4-67a6-4960-b5d5-49c8c7edb746",
+			"id": "02b77cba-3a29-45e7-b391-f9cf28e2bc62",
 			"key": "infiniteUser",
 			"value": "9b6176d9-2377-4f72-b1f2-85f8ec7be935"
 		},
 		{
-			"id": "26df46b5-11d4-49ea-b6bf-14c515c40a66",
+			"id": "0e1d65f2-7fe4-4e3d-8d11-687a620f15c9",
 			"key": "infiniteTraining",
 			"value": "45173539-5080-4c95-9b93-a24713d96ec8"
 		},
 		{
-			"id": "540497c8-313b-4af5-8df8-d434cfdd0276",
+			"id": "0b64f4ef-4905-4913-9227-7b7396653f8d",
 			"key": "infiniteExpert",
 			"value": "df2a8d19-3a54-4ce5-ae65-0b722186e44c"
 		},
 		{
-			"id": "52fef53b-9238-453f-8eeb-0468664bee00",
+			"id": "2bd09e5d-7005-4379-82c7-a234268cfc47",
 			"key": "infiniteBeta",
 			"value": "df2a8d19-3a54-4ce5-ae65-0b722186e44c",
 			"disabled": true
 		},
 		{
-			"id": "814e08f8-a407-4d5d-84e2-f499140a84b2",
+			"id": "b70c5728-dd97-4086-aeb4-9c5249263823",
 			"key": "infiniteCasual",
 			"value": "d01006e4-3114-473c-8f69-020b89d02884"
 		},
 		{
-			"id": "a66ae797-1a43-4f47-9d27-48dfa1f600b1",
+			"id": "504077c0-00d9-4b96-8608-500b12157283",
 			"key": "atcSessionID",
 			"value": "b43e734c-2290-4847-bb92-cb42636a725c"
 		},
 		{
-			"id": "9d95ca22-812a-4b33-89d5-2cb48f7f4d9c",
+			"id": "ea3de599-b0b1-4996-959c-29761d307a00",
 			"key": "flightID",
 			"value": "43fa9743-9411-4da1-8bd6-f6d6a35005e0"
 		},
 		{
-			"id": "9d3c4c0f-6852-4ff9-9d75-8ec79818be15",
+			"id": "f2c96e9a-3b52-4657-ad8b-964fe1ef4356",
 			"key": "aircraftID",
 			"value": "3f78766a-30c8-4d65-95ae-ebc2fb758aac"
 		},
 		{
-			"id": "d0a02020-ff28-4344-a4db-e7e25ba1cc84",
+			"id": "69e6cb4c-d859-48de-a89e-e29fed75f617",
 			"key": "baseURL",
 			"value": "https://api.infiniteflight.com/public/v2"
 		}
