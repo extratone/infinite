@@ -208,16 +208,16 @@
 				"method": "GET",
 				"header": [
 					{
-						"type": "text",
 						"key": "Authorization",
-						"value": "Bearer {{infiniteAuth}}"
+						"value": "Bearer {{infiniteAuth}}",
+						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "urlencoded",
 					"urlencoded": []
 				},
-				"url": "{{baseURL}}/sessions/{{infiniteExpert}}/airport/klax/status"
+				"url": "{{baseURL}}/sessions/{{infiniteExpert}}/airport/ltfm/status"
 			},
 			"response": [
 				{
