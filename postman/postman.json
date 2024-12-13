@@ -501,6 +501,7 @@
 				{
 					"listen": "test",
 					"script": {
+						"id": "18ac2f85-1b1b-48ac-abc5-049ab34220c4",
 						"exec": [
 							"pm.test(\"Response status code is 404\", function () {",
 							"  pm.expect(pm.response.code).to.equal(404);",
@@ -529,6 +530,15 @@
 							"    pm.expect(pm.response.code).to.equal(404);",
 							"});"
 						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "ecae8353-7c5f-4a4a-a5b6-2ba0501f3e6b",
+						"exec": [],
 						"type": "text/javascript"
 					}
 				}
@@ -547,7 +557,7 @@
 					"mode": "urlencoded",
 					"urlencoded": []
 				},
-				"url": "{{baseURL}}/sessions/{{infiniteExpert}}/airport/klax /status"
+				"url": "{{baseURL}}/airports"
 			},
 			"response": [
 				{
@@ -627,6 +637,217 @@
 				},
 				{
 					"id": "436c65cb-c2e4-424a-b5f5-2d8c3f6aa525",
+					"name": "Get Airport Status",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{infiniteAuth}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": "{{baseURL}}/sessions/{{infiniteExpert}}/airport/klax /status"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 13 Dec 2024 16:58:24 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-rate-limit-limit",
+							"value": "1m"
+						},
+						{
+							"key": "x-rate-limit-remaining",
+							"value": "99"
+						},
+						{
+							"key": "x-rate-limit-reset",
+							"value": "2024-12-13T16:59:00.0000000Z"
+						},
+						{
+							"key": "strict-transport-security",
+							"value": "max-age=31536000; includeSubDomains"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "8f177fafa87d8716-ORD"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"errorCode\": 0,\n    \"result\": {\n        \"airportIcao\": \"KLAX\",\n        \"airportName\": \"Los Angeles Intl\",\n        \"inboundFlightsCount\": 28,\n        \"inboundFlights\": [\n            \"7cf10511-c027-4bb6-ab2c-31f6f2d86b96\",\n            \"f647e15e-ddba-4ad7-91aa-086995be0edd\",\n            \"5305c10a-6ff4-4d9d-a074-42042f62badd\",\n            \"5998630c-57c8-4676-aaa1-e159fc9d6008\",\n            \"255e59d0-e51a-4cd3-aab8-76702b438d84\",\n            \"c66ca041-dd0d-44b3-8c24-127018cdd03f\",\n            \"386a6f6c-b561-4081-a7df-569eaa56b047\",\n            \"ea6bfe73-55fe-48bd-8afa-c4f8ac44b5c6\",\n            \"1c01366c-7a72-45b3-80da-77f196ea7bf5\",\n            \"24c5fcfe-4a40-430c-885a-69df09c22020\",\n            \"65aadfb7-fe1b-4632-bde1-832b1ca419b3\",\n            \"ed602131-8622-474e-b03b-b512d9185a95\",\n            \"67232f42-d583-4df7-ba4c-9eac080d59fd\",\n            \"6c572ab6-f12b-4e89-92cf-f9c234dc0395\",\n            \"473f3cd2-0246-4ee7-a032-b58757a6ff80\",\n            \"1c467126-7e83-4bc5-a508-fb5bc8063e6d\",\n            \"9370a911-743b-4ea9-a927-231fb39b9ca8\",\n            \"685bba69-7110-4b0e-84cd-97dc29f08c60\",\n            \"d492db0a-6103-4c92-b955-81ef7fe26f51\",\n            \"0b8e13fb-2b6f-41f7-9cd1-1c5bac72216d\",\n            \"48f325df-b2bb-40e2-8b06-bba7b6f5c1f8\",\n            \"cd4e36f6-17ef-448c-8868-6947f8228d3c\",\n            \"1f70bc48-3d57-46fa-891c-c12cbe1590d8\",\n            \"7c86da2b-b73e-469e-91f5-7de80711d43f\",\n            \"040d6ea3-35fc-47b9-aa74-5049e2ab4de1\",\n            \"597c4e80-5191-4a35-ba35-037602e28123\",\n            \"fe2a46cd-2c34-4ae5-9db3-041622635075\",\n            \"511f45f9-4a49-464c-bc52-4518c4abdac0\"\n        ],\n        \"outboundFlightsCount\": 22,\n        \"outboundFlights\": [\n            \"372da209-e31c-43ce-956a-ada08533e44b\",\n            \"1b8dea37-9a9e-4c17-83a1-ec8a18c13f76\",\n            \"b561ab1d-c1b8-43a9-bde5-58439862ce4c\",\n            \"323e75d0-b9cb-4065-a08f-9cd618abfd25\",\n            \"69754b1c-bcfb-472c-bd66-703ef340fa25\",\n            \"fab3b051-4495-4318-900c-fb4eb28a17e1\",\n            \"5aa7666b-139a-4d4b-a0d0-e3eed7e0bd0e\",\n            \"d5cb29d6-b7d4-4403-8d33-918545a1891a\",\n            \"7e8a1b26-9263-4db8-91b1-0182f3c9ddd3\",\n            \"bed6f948-bc5d-4f38-b098-1422851c7c8e\",\n            \"be3d6f7a-3a21-4862-b61c-096228029b7e\",\n            \"983ad16c-f06a-4b9b-b488-1c420cccfff4\",\n            \"aa865211-6ee3-40dd-a71e-c5b03316d987\",\n            \"4b80b27f-7698-4f4e-b287-b2aa14c63256\",\n            \"d414dcaf-386f-440e-8422-e596b7d5182f\",\n            \"e13a613e-91cc-4f28-81db-5cdd7eed726b\",\n            \"47e9fbe8-0928-46a4-8153-8561ea91a8b1\",\n            \"48772dc9-eb71-4f9c-b2d9-7d8f7415b1fa\",\n            \"1e0ee920-27a4-4024-855f-0674cc215e0e\",\n            \"9c96de25-9a74-40a4-b425-02ac85169388\",\n            \"995c3c73-56d8-41bf-b710-be2f2b69f3f2\",\n            \"591059cb-20a7-4c8f-bc75-2041bfff4dda\"\n        ],\n        \"atcFacilities\": []\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Airport Status Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 404\", function () {",
+							"  pm.expect(pm.response.code).to.equal(404);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Content-Type header is application/json\", function () {",
+							"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
+							"});",
+							"",
+							"",
+							"pm.test(\"ErrorCode is present in the response\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData).to.include.keys('errorCode');",
+							"});",
+							"",
+							"",
+							"pm.test(\"Result is an empty string\", function () {",
+							"  const responseData = pm.response.json();",
+							"  pm.expect(responseData.result).to.equal(\"\");",
+							"});",
+							"",
+							"",
+							"pm.test(\"Validate that the URL is correct and the endpoint is reachable\", function () {",
+							"    pm.expect(pm.response.code).to.equal(404);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "83b51b8a-ee29-4867-8d81-b2af132a2d81",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{infiniteAuth}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": "{{baseURL}}/sessions/{{infiniteExpert}}/airport/klax /status"
+			},
+			"response": [
+				{
+					"id": "35717be2-c189-4d53-a634-3e4d2432f005",
+					"name": "Get Airport Status",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{infiniteAuth}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": "{{baseURL}}/sessions/{{infiniteExpert}}/airport/ltfm/status"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 15 Jun 2024 02:55:12 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-rate-limit-limit",
+							"value": "1m"
+						},
+						{
+							"key": "x-rate-limit-remaining",
+							"value": "98"
+						},
+						{
+							"key": "x-rate-limit-reset",
+							"value": "2024-06-15T02:56:00.0000000Z"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "893f47a96bc42340-ORD"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"errorCode\": 0,\n    \"result\": {\n        \"airportIcao\": \"LTFM\",\n        \"airportName\": \"Istanbul International \",\n        \"inboundFlightsCount\": 93,\n        \"inboundFlights\": [\n            \"3533234f-3e85-45fa-ad00-74648dbf1a7a\",\n            \"fbe45698-0c3a-4305-87b3-8b61d71c0005\",\n            \"df4e98ba-fe89-4af3-ab32-222009ec0f9b\",\n            \"e5ca9340-a60b-4368-b82c-d9ae12648107\",\n            \"24527f67-f51c-404d-9fda-8e096d9779a8\",\n            \"bcd3d71d-1a4c-47b9-ae95-7d38ebd3c2c4\",\n            \"e7c256df-48f6-46d0-b519-6415e562da9c\",\n            \"7cfc5221-44b4-4dae-b8cf-7a39c3297933\",\n            \"da892ec9-dfa4-43a0-a984-e977e5b4417f\",\n            \"e3647dd4-2f9f-4dce-a430-f10b49815a3b\",\n            \"cb89cfa2-1c36-431d-abcc-4054630d842b\",\n            \"e029fefe-458d-425a-b524-797f46dc3683\",\n            \"9ad42529-eda8-4601-a9d6-e2c41eb53625\",\n            \"49d4e65d-8480-42ee-85c3-90994d08c356\",\n            \"3f741abd-46f7-4751-984f-40e060b0e175\",\n            \"7d6d56a3-88a0-4fb5-8f9a-920338dbeeaa\",\n            \"3ff1a13e-c26c-4513-95d2-355c73aeaf15\",\n            \"dbbc0116-7523-4764-bc3a-09549834771f\",\n            \"a52b874c-91fb-4fc0-a4d9-4a1c63427c08\",\n            \"0bd5863e-a8a8-498c-945b-ad47a8d3d578\",\n            \"7a6bbf3b-2f70-44fe-9324-a4b3dc09fd16\",\n            \"8535a799-68f6-4bd8-a45f-0f20b12c589e\",\n            \"6ab2581e-4ae1-446c-b201-ff46b73a962e\",\n            \"6b0bad2e-0f29-4ed7-b6a8-969894a0fd88\",\n            \"ca6db88c-a98f-4f57-94e9-82d8d3708ec7\",\n            \"f9dbf51f-2bf1-44d8-92f8-f264d230e359\",\n            \"5ff68cbd-62fb-4b37-a587-46d04281d814\",\n            \"b74ef1ab-2e95-498d-abfc-07fb3907ef7d\",\n            \"a00ddb32-1472-4f19-8bdb-54079d74ff4b\",\n            \"bdef5691-ba6a-44e4-a0c8-934bc0dd55fe\",\n            \"1ea0fa05-e542-4162-b3d5-08306d120a94\",\n            \"5c017451-e058-4162-b5e6-6ba4cd0ea159\",\n            \"b3f1d332-36ac-4427-af67-3c1687d23e01\",\n            \"57ca2b49-ade4-41ce-a6fe-d7045b30274b\",\n            \"051862c2-4ba3-4adf-8961-41a983074aea\",\n            \"495d2612-2423-44ad-9bb1-a3c5f8aa5c3b\",\n            \"9be7b355-be01-4be1-9905-da5162f09399\",\n            \"ee8b9a03-e683-4d7f-84cc-e55428e8367f\",\n            \"01d2ad10-b645-453c-9e48-30a039f97f17\",\n            \"1f038485-a2ca-44c5-8da4-8ceedb217b8e\",\n            \"695b80fb-a0c7-4a32-8878-5737e781ca0f\",\n            \"439b8bca-0a4b-4c07-b241-8715e8821c0c\",\n            \"f5d963bb-2432-4925-945e-e3786a6aefde\",\n            \"0937a63f-cdd7-4f08-8eb0-226dbab42335\",\n            \"4093c4be-95d6-4df0-9cb0-e2883d08f3c3\",\n            \"92ca0112-bda8-4637-889a-7be8b258e75e\",\n            \"c6bf6dc6-1258-490e-a2d5-7b0ec942adb7\",\n            \"c6ccc8ba-9af4-4e45-88c8-4103ffa02315\",\n            \"e7a62b78-e18f-4c89-a51d-dc5179f96622\",\n            \"a85319ba-6793-4dc7-a7a0-eec96d3ace95\",\n            \"8121e980-cc48-445e-9bf9-55b26fec8b68\",\n            \"98054875-8fe5-419e-be32-420c695d1ce9\",\n            \"f1fe8c6f-4da0-4872-b87b-fb4539f31659\",\n            \"4b3a6363-975b-4809-8e5a-24c1aaaa665a\",\n            \"fe2e3b5d-fb0c-4d57-a9b1-a9469d7b50e1\",\n            \"22e05890-a321-4b33-b260-6f82cc87b5e2\",\n            \"7bb16af8-868d-4725-96c6-9ba18e5f1e83\",\n            \"b0ae2ae8-829e-4981-b29f-b591abe56dfa\",\n            \"b9178446-75d6-4913-b080-d6437c88938f\",\n            \"9fe832b1-79d5-4f5e-a25a-0329fd5035d6\",\n            \"a7f07466-5960-4a2b-930c-82082358dfda\",\n            \"91cb2ecb-1720-41ed-b802-055564bb94e8\",\n            \"b0ae2f67-5383-4f9e-8bde-76f77e103139\",\n            \"4de13e87-278d-4608-bc85-3fec19de5b0d\",\n            \"c4df0a65-f8ac-44ce-acc3-7fff5c4b1710\",\n            \"af46bf94-b13f-43c4-b21f-30a054676b4d\",\n            \"e7a6bc9a-3167-466a-a1b5-d2faf011cf95\",\n            \"e1f68883-829c-46d5-94f9-15d9a2929108\",\n            \"3553a312-12c8-4f95-8abd-d9db71d991be\",\n            \"b2f241d3-9bea-489c-9242-00f6806e59a0\",\n            \"3b7b614f-11a1-4bf1-8791-5992db92009d\",\n            \"6b4d36b5-ab92-40ac-9f81-0c2e9f7e7761\",\n            \"aaa106f6-1873-4c9f-86a9-8303b4014425\",\n            \"b6980e06-10f7-468e-9426-d91999652ef4\",\n            \"54b82464-0a59-4246-a293-88a4c0028dc2\",\n            \"f5841038-2461-4840-bebc-0036eff9168d\",\n            \"1d1d1e01-7f08-4eba-9a8b-4b2b599cdbfa\",\n            \"4fb9cb1a-03d6-4f45-941d-c8d2896ad4d1\",\n            \"352ee072-b7a8-41fb-bef0-0274ef9f1e8a\",\n            \"efc3eedc-f4a7-4555-8211-cf15d6126287\",\n            \"74b64373-9693-4744-8f96-9bcfbea9244a\",\n            \"51e52c73-3f40-40ad-9721-4718aa90a4bd\",\n            \"f04c973c-1d54-4ffc-9e1c-b0188cfe7220\",\n            \"f0313476-ef1a-456b-bb05-11050e44c6fc\",\n            \"29b8e402-945a-4322-a45e-99cf074d0a10\",\n            \"f5a86c3f-7bbe-411d-b55c-5f37d79ab993\",\n            \"098a2e9e-6c2a-4629-a78d-6a41f15fc648\",\n            \"4c8a8bda-4976-460d-9308-d710b7c67f13\",\n            \"f9e5a21d-9a8d-4bae-b2c9-a8437a08e19f\",\n            \"6b7c2e5a-11ae-4eee-97f7-5346e44f8399\",\n            \"ea6edaab-496c-4da6-96d3-0fe8c141fd30\",\n            \"f5150129-174e-4d16-bf4e-90751bb87a3f\",\n            \"c9bea12c-e752-4905-b13d-ec67d42a6a39\"\n        ],\n        \"outboundFlightsCount\": 19,\n        \"outboundFlights\": [\n            \"86ca7363-a472-4227-9c69-3c13223d6102\",\n            \"1e095462-c6a3-42b2-8853-96124c475248\",\n            \"57d42911-a01c-47d6-ade9-49af5785d165\",\n            \"73f331e1-ef1f-4483-8b43-6fb8fc469929\",\n            \"b171e1a7-be93-4fd8-911a-49463e3d0d90\",\n            \"44f49e9b-a1af-4c7a-a29c-03e5bb66cf0f\",\n            \"aa1876e1-375b-4863-a561-4dfd4558b702\",\n            \"5c8d020e-f1ec-4ab2-b2b3-48fe76066832\",\n            \"2251a71e-f565-4b15-9967-7dbdc9fab8b2\",\n            \"5a704ffb-0503-4085-a833-8fccd72b075f\",\n            \"464b6ca0-adf0-4f83-a4cc-71c64e4b1955\",\n            \"12f51ace-2764-412e-a386-6be2e5e92836\",\n            \"734f9bac-6efb-4729-8b74-cdfc89b8fa29\",\n            \"200a501c-d39b-4e35-9491-22fdca2e3f5a\",\n            \"236a40b9-f03c-4c11-9eb6-4d418a67a46b\",\n            \"a2553379-f60d-43d7-a91d-e19493034dca\",\n            \"cd71732e-33ed-46d6-b53d-8f32081424e6\",\n            \"38f84e5c-d5e1-44c0-a88d-48b533bbf454\",\n            \"48e647bc-b2fa-4c5f-8e58-042b52c14bb4\"\n        ],\n        \"atcFacilities\": [\n            {\n                \"frequencyId\": \"61cdea75-71a9-bdfb-46e3-1e71cecd0f8e\",\n                \"userId\": \"5a190950-676b-499a-9c52-d5637f80884f\",\n                \"username\": \"icecreamhacker801\",\n                \"virtualOrganization\": null,\n                \"airportName\": \"LTFM\",\n                \"type\": 0,\n                \"latitude\": 41.28006,\n                \"longitude\": 28.725035,\n                \"startTime\": \"2024-06-15 02:19:10Z\"\n            },\n            {\n                \"frequencyId\": \"4d59420b-e9b1-47f9-82d1-e7b44d545c82\",\n                \"userId\": \"5a190950-676b-499a-9c52-d5637f80884f\",\n                \"username\": \"icecreamhacker801\",\n                \"virtualOrganization\": null,\n                \"airportName\": \"LTFM\",\n                \"type\": 1,\n                \"latitude\": 41.28006,\n                \"longitude\": 28.725035,\n                \"startTime\": \"2024-06-15 02:19:10Z\"\n            },\n            {\n                \"frequencyId\": \"e4842bb5-db73-c0e5-799f-d4d22ee57dfa\",\n                \"userId\": \"5a190950-676b-499a-9c52-d5637f80884f\",\n                \"username\": \"icecreamhacker801\",\n                \"virtualOrganization\": null,\n                \"airportName\": \"LTFM\",\n                \"type\": 7,\n                \"latitude\": 41.28006,\n                \"longitude\": 28.725035,\n                \"startTime\": \"2024-06-15 02:19:10Z\"\n            }\n        ]\n    }\n}"
+				},
+				{
+					"id": "3efff58f-edb2-4cc9-a29b-b8e2a9d2320a",
 					"name": "Get Airport Status",
 					"originalRequest": {
 						"method": "GET",
