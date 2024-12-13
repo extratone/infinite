@@ -557,7 +557,7 @@
 					"mode": "urlencoded",
 					"urlencoded": []
 				},
-				"url": "{{baseURL}}/airports"
+				"url": ""
 			},
 			"response": [
 				{
