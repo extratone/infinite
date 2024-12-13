@@ -378,7 +378,8 @@
 							"mode": "urlencoded",
 							"urlencoded": []
 						},
-						"url": "{{baseURL}}/sessions/{{infiniteExpert}}/airport/eddf/atis"
+						"url": "{{baseURL}}/sessions/{{infiniteExpert}}/airport/eddf/atis",
+						"description": "---\nid: atis\ntitle: Get Airport ATIS\nmeta: Overview of the Airport ATIS endpoint of the Infinite Flight Live API\norder: 10\ncontributor: KaiM\n---\n\n# Get Airport ATIS\n\nRetrieve the ATIS for an airport on a specific server if it is active.\n\n⚠️\n\n: This API is intended for simulated flight only and must not be used in real-world flight situations.\n\n## Resource\n\n**GET** `https://api.infiniteflight.com/public/v2/sessions/{sessionId}/airport/{airportIcao}/atis`\n\n## Authorization\n\nInclude your API key (`<apikey>`) by either:\n\n- Adding the `apikey` query parameter. For example, `?apikey=<apikey>`.\n- Sending a bearer authorization header with your API key. For example, `Authorization: Bearer <apikey>`.\n\n## Parameters\n\n| Name          | Located in | Description                             | Required | Schema        |\n| ------------- | ---------- | --------------------------------------- | -------- | ------------- |\n| `airportIcao` | query      | ICAO of the airport to get the ATIS for | Yes      | string        |\n| `sessionId`   | query      | Session (Server) ID of the Live Server  | Yes      | string (uuid) |\n\n## Response\n\n#### Sample Response\n\n```json\n{\n    \"errorCode\":0,\n    \"result\":\"Manchester Airport, ATIS information DELTA, time 2355 ZULU, Wind 350 at 6 Visibility 21, Temperature 2, Dew Point 0, QNH 1024. Remarks, no pattern work allowed, no light aircraft accepted at this time. Landing Runways 05L and 05R, Departing Runways 05L and 05R. Advise on initial contact, you have information DELTA.\"\n}\n```\n\n#### LiveAPIResponse\n\n*Response Type:* `application/json`\n\n| Name        | Type    | Description                                                  |\n| ----------- | ------- | ------------------------------------------------------------ |\n| `errorCode` | integer | _Enum:_ `\"Ok = 0\"`, `\"UserNotFound = 1\"`, `\"MissingRequestParameters = 2\"`, `\"EndpointError = 3\"`, `\"NotAuthorized = 4\"`, `\"ServerNotFound = 5\"`, `\"FlightNotFound = 6\"`, `\"NoAtisAvailable = 7\"` |\n| `result`    | string  | The ATIS, or `null` if it is not available                   |"
 					},
 					"response": [
 						{
@@ -463,7 +464,7 @@
 					]
 				},
 				{
-					"name": "Get Airport ATIS Copy",
+					"name": "Get Airport Information",
 					"event": [
 						{
 							"listen": "test",
@@ -512,8 +513,11 @@
 							"listen": "prerequest",
 							"script": {
 								"id": "3baf3b0a-0b9b-4174-b10f-52c152280c42",
-								"exec": [],
-								"type": "text/javascript"
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -531,7 +535,8 @@
 							"mode": "urlencoded",
 							"urlencoded": []
 						},
-						"url": "{{baseURL}}/sessions/{{infiniteExpert}}/airport/eddf/atis"
+						"url": "{{baseURL}}/airport/KLAX",
+						"description": "---\nid: airport-information\ntitle: Get Airport Information\nmeta: Overview of the Airport Information endpoint of the Infinite Flight Live API\norder: 22\n---\n\n# Get Airport Information\n\nGet specific information about an airport, including location data and scenery editing metadata.\n\n⚠️\n\n: This API is intended for simulated flight only and must not be used in real-world flight situations.\n\n## Resource\n\n**GET** `https://api.infiniteflight.com/public/v2/airport/{airportIcao}`\n\n## Authorization\n\nInclude your API key (`<apikey>`) by either:\n\n- Adding the `apikey` query parameter. For example, `?apikey=<apikey>`.\n- Sending a bearer authorization header with your API key. For example, `Authorization: Bearer <apikey>`.\n\n## Parameters\n\n| Name          | Located in | Description                               | Required | Schema        |\n| ------------- | ---------- | ----------------------------------------- | -------- | ------------- |\n| `airportIcao` | query      | ICAO of the airport to get                | Yes      | string        |\n\n## Response\n\n#### Sample Response\n\n```json\n{\n    \"errorCode\": 0,\n    \"result\": {\n        \"icao\": \"KLAX\",\n        \"iata\": \"LAX\",\n        \"name\": \"Los Angeles Intl\",\n        \"city\": \"Los Angeles\",\n        \"state\": \"California\",\n        \"country\": {\n            \"id\": 243,\n            \"name\": \"United States\",\n            \"isoCode\": \"US\"\n        },\n        \"class\": 3,\n        \"frequenciesCount\": 16,\n        \"elevation\": 125,\n        \"latitude\": 33.9431209564209,\n        \"longitude\": -118.40881633758545,\n        \"timezone\": \"UTC-08:00 America\",\n        \"has3dBuildings\": true,\n        \"hasJetbridges\": true,\n        \"hasSafedockUnits\": true,\n        \"hasTaxiwayRouting\": true\n    }\n}\n```\n\n#### LiveAPIResponse\n\n*Response Type:* `application/json`\n\n| Name        | Type          | Description                                                  |\n| ----------- | ------------- | ------------------------------------------------------------ |\n| `errorCode` | integer       | _Enum:_ `\"Ok = 0\"`, `\"UserNotFound = 1\"`, `\"MissingRequestParameters = 2\"`, `\"EndpointError = 3\"`, `\"NotAuthorized = 4\"`, `\"ServerNotFound = 5\"`, `\"FlightNotFound = 6\"`, `\"NoAtisAvailable = 7\"` |\n| `result`    | AirportInfo | Information about the airport                               |\n\n#### AirportInfo\n\n| Name                | Type    | Description                                                  |\n| ------------------- | ------- | ------------------------------------------------------------ |\n| `icao`              | string  | The ICAO code of the airport                                 |\n| `iata`              | string  | The IATA code of the airport                                 |\n| `name`              | string  | The official name of the airport                             |\n| `city`              | string  | The city where the airport is located                        |\n| `state`             | string  | The state where the airport is located                       |\n| `country`           | Country | Information about the country where the airport is located  |\n| `class`             | integer | Classification of the airport based on its features and traffic |\n| `frequenciesCount`  | integer | The number of available communication frequencies at the airport |\n| `elevation`         | integer | The elevation of the airport above sea level (in feet)       |\n| `latitude`          | float   | The geographical latitude of the airport                     |\n| `longitude`         | float   | The geographical longitude of the airport                    |\n| `timezone`          | string  | The timezone of the airport                                  |\n| `has3dBuildings`    | boolean | Indicates whether the airport has 3D buildings               |\n| `hasJetbridges`     | boolean | Indicates whether the airport has jet bridges                |\n| `hasSafedockUnits`  | boolean | Indicates whether the airport has Safedock units             |\n| `hasTaxiwayRouting` | boolean | Indicates whether the airport has taxiway routing capabilities |\n\n#### Country\n\n| Name       | Type   | Description                                |\n| ---------- | ------ | ------------------------------------------ |\n| `id`       | integer| (please ignore, this will be removed soon)     |\n| `name`     | string | The name of the country                    |\n| `isoCode`  | string | The ISO code of the country                |"
 					},
 					"response": [
 						{
@@ -677,7 +682,8 @@
 							"mode": "urlencoded",
 							"urlencoded": []
 						},
-						"url": "{{baseURL}}/sessions/{{infiniteExpert}}/airport/klax/status"
+						"url": "{{baseURL}}/sessions/{{infiniteExpert}}/airport/klax/status",
+						"description": "---\nid: airport-status\ntitle: Get Airport Status\nmeta: Overview of the Airport Status endpoint of the Infinite Flight Live API\norder: 11\ncontributor: sqeezelemon\n---\n\n# Get Airport Status\n\nRetrieve active ATC status information for an airport, and the number of inbound and outbound aircraft.\n\n⚠️\n\n: This API is intended for simulated flight only and must not be used in real-world flight situations.\n\n## Resource\n\n**GET** `https://api.infiniteflight.com/public/v2/sessions/{sessionId}/airport/{airportIcao}/status`\n\n## Authorization\n\nInclude your API key (`<apikey>`) by either:\n\n-   Adding the `apikey` query parameter. For example, `?apikey=<apikey>`.\n-   Sending a bearer authorization header with your API key. For example, `Authorization: Bearer <apikey>`.\n\n## Parameters\n\n| Name          | Located in | Description                               | Required | Schema        |\n| ------------- | ---------- | ----------------------------------------- | -------- | ------------- |\n| `airportIcao` | query      | ICAO of the airport to get the status for | Yes      | string        |\n| `sessionId`   | query      | Session (Server) ID of the Live Server    | Yes      | string (uuid) |\n\n## Response\n\n#### Sample Response\n\n```json\n{\n  \"errorCode\": 0,\n  \"result\": {\n    \"airportIcao\": \"VTBS\",\n    \"airportName\": \"Suvarnabhumi Airport\",\n    \"inboundFlightsCount\": 40,\n    \"inboundFlights\": [\n      \"4f559855-fecc-4a8a-a95e-1d097eed9b72\",\n\t  ...\n    ],\n    \"outboundFlightsCount\": 19,\n    \"outboundFlights\": [\n      \"59e9509b-214a-4f8c-9d45-29c4f7ea01d7\",\n\t  ...\n    ],\n    \"atcFacilities\": [\n      {\n        \"frequencyId\": \"23bea566-20a0-2858-a40e-179d0699afc1\",\n        \"userId\": \"05328fc4-b651-45e9-8e1f-328095329484\",\n        \"username\": \"Rhys_V\",\n        \"virtualOrganization\": null,\n        \"airportName\": \"VTBS\",\n        \"type\": 4,\n        \"latitude\": 13.680815,\n        \"longitude\": 100.74768,\n        \"startTime\": \"2021-02-08 09:59:58Z\"\n      }\n    ]\n  }\n}\n```\n\n#### LiveAPIResponse\n\n_Response Type:_ `application/json`\n\n| Name        | Type    | Description                                                                                                                                                                                       |\n| ----------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |\n| `errorCode` | integer | _Enum:_ `\"Ok = 0\"`, `\"UserNotFound = 1\"`, `\"MissingRequestParameters = 2\"`, `\"EndpointError = 3\"`, `\"NotAuthorized = 4\"`, `\"ServerNotFound = 5\"`, `\"FlightNotFound = 6\"`, `\"NoAtisAvailable = 7\"` |\n| `result`    | string  | An `AirportStatus` object                                                                                                                                                                         |\n\n#### Airport Status\n\n| Name                   | Type                | Description                                                                                                       |\n| ---------------------- | ------------------- | ----------------------------------------------------------------------------------------------------------------- |\n| `airportIcao`          | string              | ICAO of the airport                                                                                               |\n| `airportName`          | string              | Name of the airport                                          |\n| `inboundFlightsCount`  | integer             | Number of aircraft inbound to this airport (must have final waypoint in flight plan set as the airport ICAO)      |\n| `inboundFlights`       | [string (uuid)]     | A list of flight identifiers inbound to this airport. Use this to get flight plans or flight route information    |\n| `outboundFlightsCount` | integer             | Number of aircraft departing this airport (must have first waypoint in flight plan set as the airport ICAO)       |\n| `outboundFlights`      | [string (uuid)]     | A list of flight identifiers outbound from this airport. Use this to get flight plans or flight route information |\n| `atcFacilities`        | [ActiveATCFacility] | Array of ActiveATCFacility objects                                                                                |\n\n#### ActiveATCFacility\n\n| Name                  | Type          | Description                                                                                                                                                                                                                                                                    |\n| --------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |\n| `frequencyId`         | string (uuid) | Unique identifier for the open frequency                                                                                                                                                                                                                                       |\n| `userId`              | string (uuid) | Unique identifier for the user controlling the frequency                                                                                                                                                                                                                       |\n| `username`            | string        | The user's forum username if the account is linked. If the account isn't linked, this will be null                                                                                                                                                                             |\n| `virtualOrganization` | string        | _(not currently in use)_                                                                                                                                                                                                                                                       |\n| `airportName`         | string        | The 4-character ICAO identifier for the airport. `null` for center                                                                                                                                                                                                             |\n| `type`                | integer       | The type of frequency opened - not all of these are in use. _Enum:_ `\"Ground = 0\"`, `\"Tower = 1\"`, `\"Unicom = 2\"`, `\"Clearance = 3\"`, `\"Approach = 4\"`, `\"Departure = 5\"`, `\"Center = 6\"`, `\"ATIS = 7\"`, `\"Aircraft = 8\"`, `\"Recorded = 9\"`, `\"Unknown = 10\"`, `\"Unused = 11\"` |\n| `latitude`            | float         | Decimal latitude of the airport                                                                                                                                                                                                                                                |\n| `longitude`           | float         | Decimal longitude of the airport                                                                                                                                                                                                                                               |\n| `startTime `          | string        | Time at which the frequency was opened, in the following format: `YYYY-MM-DD HH:mm:ssZ`                                                                                                                                                                                        |"
 					},
 					"response": [
 						{
@@ -913,6 +919,229 @@
 				}
 			],
 			"id": "122e91ef-b508-4e27-ae30-4292efc032fc"
+		},
+		{
+			"name": "Get Active ATC Frequencies",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {",
+							"  pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Content type is application/json\", function () {",
+							"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
+							"});",
+							"",
+							"",
+							"pm.test(\"Result array is present and contains expected number of elements\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    pm.expect(responseData.result).to.exist.and.to.be.an('array');",
+							"    pm.expect(responseData.result).to.have.lengthOf(1);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Validate the required fields in 'result' array\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData.result).to.be.an('array');",
+							"    responseData.result.forEach(function(session) {",
+							"        pm.expect(session).to.include.all.keys('frequencyId', 'userId', 'username', 'airportName', 'type', 'latitude', 'longitude', 'startTime');",
+							"    });",
+							"});",
+							"",
+							"",
+							"pm.test(\"Latitude and longitude are in valid format and within the expected range\", function () {",
+							"  const responseData = pm.response.json();",
+							"  ",
+							"  pm.expect(responseData).to.be.an('object');",
+							"  ",
+							"  responseData.result.forEach(function(session) {",
+							"    pm.expect(session.latitude).to.be.a('number', \"Latitude should be a number\");",
+							"    pm.expect(session.longitude).to.be.a('number', \"Longitude should be a number\");",
+							"    pm.expect(session.latitude).to.be.at.least(-90).and.to.be.at.most(90, \"Latitude should be within -90 to 90 degrees\");",
+							"    pm.expect(session.longitude).to.be.at.least(-180).and.to.be.at.most(180, \"Longitude should be within -180 to 180 degrees\");",
+							"  });",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "01B6E241-AE90-4122-9CF0-52D8F6773D87",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"value": "Bearer {{infiniteAuth}}",
+						"type": "text",
+						"key": "Authorization"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": "{{baseURL}}/sessions/{{infiniteExpert}}/atc",
+				"description": "---\nid: atc\ntitle: Get Active ATC Frequencies\nmeta: Overview of the ATC endpoint of the Infinite Flight Live API\norder: 7\ncontributor: KaiM,sqeezelemon\n---\n\n# Get Active ATC Frequencies\n\nRetrieve active Air Traffic Control frequencies for a session\n\n⚠️\n\n: This API is intended for simulated flight only and must not be used in real-world flight situations.\n\n## Resource\n\n**GET** `https://api.infiniteflight.com/public/v2/sessions/{sessionId}/atc`\n\n## Authorization\n\nInclude your API key (`<apikey>`) by either:\n\n-   Adding the `apikey` query parameter. For example, `?apikey=<apikey>`.\n-   Sending a bearer authorization header with your API key. For example, `Authorization: Bearer <apikey>`.\n\n## Parameters\n\n| Name        | Located in | Description                                           | Required | Schema        |\n| ----------- | ---------- | ----------------------------------------------------- | -------- | ------------- |\n| `sessionId` | path       | ID of the session returned from the Sessions endpoint | Yes      | string (uuid) |\n\n## Response\n\n#### Sample Response\n\n```json\n{\n    \"errorCode\": 0,\n    \"result\": [\n        {\n            \"frequencyId\": \"c2d7decc-2803-c905-5d88-81bc07626b1f\",\n            \"userId\": \"3f8b28bf-bbb1-4024-80ae-2a0ea9b30685\",\n            \"username\": \"Cameron\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"LEPA\",\n            \"type\": 1,\n            \"latitude\": 39.551575,\n            \"longitude\": 2.736811,\n            \"startTime\": \"2020-10-02 15:47:25Z\"\n        }\n    ]\n}\n```\n\n#### LiveAPIResponse\n\n_Response Type:_ `application/json`\n\n| Name        | Type                | Description                                                                                                                                                                                       |\n| ----------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |\n| `errorCode` | integer             | _Enum:_ `\"Ok = 0\"`, `\"UserNotFound = 1\"`, `\"MissingRequestParameters = 2\"`, `\"EndpointError = 3\"`, `\"NotAuthorized = 4\"`, `\"ServerNotFound = 5\"`, `\"FlightNotFound = 6\"`, `\"NoAtisAvailable = 7\"` |\n| `result`    | [ActiveATCFacility] | Array of ActiveATCFacility objects                                                                                                                                                                |\n\n#### ActiveATCFacility\n\n| Name                  | Type          | Description                                                                                                                                                                                                                                                                    |\n| --------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |\n| `frequencyId`         | string (uuid) | Unique identifier for the open frequency                                                                                                                                                                                                                                       |\n| `userId`              | string (uuid) | Unique identifier for the user controlling the frequency                                                                                                                                                                                                                       |\n| `username`            | string        | The user's forum username if the account is linked. If the account isn't linked, this will be null                                                                                                                                                                             |\n| `virtualOrganization` | string        | _(not currently in use)_                                                                                                                                                                                                                                                       |\n| `airportName`         | string        | The 4-character ICAO identifier for the airport. `null` for center                                                                                                                                                                                                             |\n| `type`                | integer       | The type of frequency opened - not all of these are in use. _Enum:_ `\"Ground = 0\"`, `\"Tower = 1\"`, `\"Unicom = 2\"`, `\"Clearance = 3\"`, `\"Approach = 4\"`, `\"Departure = 5\"`, `\"Center = 6\"`, `\"ATIS = 7\"`, `\"Aircraft = 8\"`, `\"Recorded = 9\"`, `\"Unknown = 10\"`, `\"Unused = 11\"` |\n| `latitude`            | float         | Decimal latitude of the airport                                                                                                                                                                                                                                                |\n| `longitude`           | float         | Decimal longitude of the airport                                                                                                                                                                                                                                               |\n| `startTime `          | string        | Time at which the frequency was opened, in the following format: `YYYY-MM-DD HH:mm:ssZ`                                                                                                                                                                                        |"
+			},
+			"response": [
+				{
+					"id": "5dd77e22-c972-4c81-88ce-fa59811924f5",
+					"name": "Get Active ATC Frequencies",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"value": "Bearer {{infiniteAuth}}",
+								"type": "text",
+								"key": "Authorization"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": "{{baseURL}}/sessions/{{infiniteExpert}}/atc"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 08 Mar 2023 17:26:53 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-rate-limit-limit",
+							"value": "1m"
+						},
+						{
+							"key": "x-rate-limit-remaining",
+							"value": "99"
+						},
+						{
+							"key": "x-rate-limit-reset",
+							"value": "2023-03-08T17:27:00.0000000Z"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "7a4cc9289ba8233c-ORD"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"errorCode\": 0,\n    \"result\": [\n        {\n            \"frequencyId\": \"3adee95b-1837-8992-b906-30db932af9fd\",\n            \"userId\": \"86cd9157-5c5b-49ab-8d4b-9baa5aacf2bd\",\n            \"username\": \"David_ZGGG\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"GCLP\",\n            \"type\": 4,\n            \"latitude\": 27.93156,\n            \"longitude\": -15.385593,\n            \"startTime\": \"2023-03-08 17:00:48Z\"\n        },\n        {\n            \"frequencyId\": \"b12ac40c-0ee6-e00c-03cd-3152611ef2e1\",\n            \"userId\": \"4ca88a2f-37a3-43b2-a064-5a6627d96968\",\n            \"username\": \"apple\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"GCLP\",\n            \"type\": 0,\n            \"latitude\": 27.93156,\n            \"longitude\": -15.385593,\n            \"startTime\": \"2023-03-08 17:11:41Z\"\n        },\n        {\n            \"frequencyId\": \"41c4a702-7d6b-8010-dc5f-811f58a158ad\",\n            \"userId\": \"4ca88a2f-37a3-43b2-a064-5a6627d96968\",\n            \"username\": \"apple\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"GCLP\",\n            \"type\": 1,\n            \"latitude\": 27.93156,\n            \"longitude\": -15.385593,\n            \"startTime\": \"2023-03-08 17:11:41Z\"\n        },\n        {\n            \"frequencyId\": \"6af0acaa-6be9-d24d-f2a9-276467460978\",\n            \"userId\": \"dfe4b39b-f884-4c3c-9283-936098f4d8b7\",\n            \"username\": \"Elias_Solberg1\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"FAOR\",\n            \"type\": 0,\n            \"latitude\": -26.138588,\n            \"longitude\": 28.246487,\n            \"startTime\": \"2023-03-08 17:26:41Z\"\n        },\n        {\n            \"frequencyId\": \"2630b729-4d36-4f4c-35a3-df68b2d2e83b\",\n            \"userId\": \"dfe4b39b-f884-4c3c-9283-936098f4d8b7\",\n            \"username\": \"Elias_Solberg1\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"FAOR\",\n            \"type\": 1,\n            \"latitude\": -26.138588,\n            \"longitude\": 28.246487,\n            \"startTime\": \"2023-03-08 17:26:41Z\"\n        }\n    ]\n}"
+				},
+				{
+					"id": "f5329652-86c0-4839-96a2-1eba680f0ad0",
+					"name": "Get Active ATC Frequencies",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{infiniteAuth}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": "{{baseURL}}/sessions/{{infiniteExpert}}/atc"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 13 Dec 2024 16:58:54 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-rate-limit-limit",
+							"value": "1m"
+						},
+						{
+							"key": "x-rate-limit-remaining",
+							"value": "97"
+						},
+						{
+							"key": "x-rate-limit-reset",
+							"value": "2024-12-13T16:59:00.0000000Z"
+						},
+						{
+							"key": "strict-transport-security",
+							"value": "max-age=31536000; includeSubDomains"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "8f17806a4b0c8716-ORD"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"errorCode\": 0,\n    \"result\": [\n        {\n            \"frequencyId\": \"534d7acb-5a65-f1f4-c3cd-5681997b73fc\",\n            \"userId\": \"d7c2620d-8947-4d0b-af90-8b7a59b8fd66\",\n            \"username\": \"RLX_dante\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"CYYZ\",\n            \"type\": 0,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 15:03:09Z\"\n        },\n        {\n            \"frequencyId\": \"da0f16c0-28d2-7bb5-7734-4bbb8330249c\",\n            \"userId\": \"d7c2620d-8947-4d0b-af90-8b7a59b8fd66\",\n            \"username\": \"RLX_dante\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"CYYZ\",\n            \"type\": 1,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 15:03:09Z\"\n        },\n        {\n            \"frequencyId\": \"31b4394f-b2af-cf59-55fd-4a3a4a42ddf6\",\n            \"userId\": \"d7c2620d-8947-4d0b-af90-8b7a59b8fd66\",\n            \"username\": \"RLX_dante\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"CYYZ\",\n            \"type\": 7,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 15:03:09Z\"\n        },\n        {\n            \"frequencyId\": \"d72a06ed-a2ad-089d-581c-9271365c3572\",\n            \"userId\": \"32d1dcfe-dd34-4839-8e32-816dbad65d29\",\n            \"username\": \"MikaL\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"EIDW\",\n            \"type\": 0,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 15:37:14Z\"\n        },\n        {\n            \"frequencyId\": \"b6b55218-34da-166c-3cca-01695d03502e\",\n            \"userId\": \"ab570f53-eb6b-4f23-8d55-4429328c6119\",\n            \"username\": \"RyanR\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"EGLL\",\n            \"type\": 0,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 15:38:32Z\"\n        },\n        {\n            \"frequencyId\": \"ff252f81-4080-136c-4c4d-ee30ac2a03c5\",\n            \"userId\": \"ab570f53-eb6b-4f23-8d55-4429328c6119\",\n            \"username\": \"RyanR\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"EGLL\",\n            \"type\": 1,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 15:38:32Z\"\n        },\n        {\n            \"frequencyId\": \"5a58691c-a451-261b-d51c-fb5be26f99e3\",\n            \"userId\": \"ab570f53-eb6b-4f23-8d55-4429328c6119\",\n            \"username\": \"RyanR\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"EGLL\",\n            \"type\": 7,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 15:38:32Z\"\n        },\n        {\n            \"frequencyId\": \"32fed91f-ab95-345a-f909-8cfe7e15f31d\",\n            \"userId\": \"8ddfb84e-9613-4400-994c-5bf9d38a571f\",\n            \"username\": \"Syjalo\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"EGCC\",\n            \"type\": 0,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 15:57:37Z\"\n        },\n        {\n            \"frequencyId\": \"76d2ee56-28b3-8e78-ebc2-0643942488c8\",\n            \"userId\": \"8ddfb84e-9613-4400-994c-5bf9d38a571f\",\n            \"username\": \"Syjalo\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"EGCC\",\n            \"type\": 1,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 15:57:37Z\"\n        },\n        {\n            \"frequencyId\": \"99b085cd-0b1e-2087-d7c1-3e0807c5bd68\",\n            \"userId\": \"8ddfb84e-9613-4400-994c-5bf9d38a571f\",\n            \"username\": \"Syjalo\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"EGCC\",\n            \"type\": 7,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 15:57:37Z\"\n        },\n        {\n            \"frequencyId\": \"949b01fe-c500-ae57-a70a-79768ecdd5c8\",\n            \"userId\": \"d299f4ab-c119-4ef3-896a-fb8c23482b36\",\n            \"username\": \"Adii\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"EIDW\",\n            \"type\": 4,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:01:17Z\"\n        },\n        {\n            \"frequencyId\": \"ab2e6c5e-aa05-e656-0441-0636858d5fdc\",\n            \"userId\": \"b472ce64-85a9-4725-ba6c-c1acb8b3a325\",\n            \"username\": \"MJP_27\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"KMCO\",\n            \"type\": 0,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:03:06Z\"\n        },\n        {\n            \"frequencyId\": \"3d84fe81-45c9-2499-13f2-5e4506b822a0\",\n            \"userId\": \"b472ce64-85a9-4725-ba6c-c1acb8b3a325\",\n            \"username\": \"MJP_27\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"KMCO\",\n            \"type\": 1,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:03:06Z\"\n        },\n        {\n            \"frequencyId\": \"66b66963-6925-0c99-2a94-cc248d9d6a7d\",\n            \"userId\": \"b472ce64-85a9-4725-ba6c-c1acb8b3a325\",\n            \"username\": \"MJP_27\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"KMCO\",\n            \"type\": 7,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:03:06Z\"\n        },\n        {\n            \"frequencyId\": \"685eec70-975a-2211-1cb9-10eefeaad8d0\",\n            \"userId\": \"908fa721-8e74-4407-b6a4-e3e617789514\",\n            \"username\": \"Albo_DUS\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"EDDF\",\n            \"type\": 0,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:03:20Z\"\n        },\n        {\n            \"frequencyId\": \"25b4fdc6-0717-b11c-2d1e-7d79bcd870d7\",\n            \"userId\": \"908fa721-8e74-4407-b6a4-e3e617789514\",\n            \"username\": \"Albo_DUS\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"EDDF\",\n            \"type\": 1,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:03:20Z\"\n        },\n        {\n            \"frequencyId\": \"edd80d95-d9f2-bc94-5619-88e6b7a29dca\",\n            \"userId\": \"908fa721-8e74-4407-b6a4-e3e617789514\",\n            \"username\": \"Albo_DUS\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"EDDF\",\n            \"type\": 7,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:03:20Z\"\n        },\n        {\n            \"frequencyId\": \"f44c08c0-45bf-6108-5982-16e6c603f35b\",\n            \"userId\": \"0c326e97-ee4c-4246-9588-11b87f1bed9f\",\n            \"username\": \"IFATCLee3440\",\n            \"virtualOrganization\": null,\n            \"airportName\": null,\n            \"type\": 6,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:11:36Z\"\n        },\n        {\n            \"frequencyId\": \"e5158f5f-137e-4d2a-208d-ca270bdbf1b4\",\n            \"userId\": \"0c326e97-ee4c-4246-9588-11b87f1bed9f\",\n            \"username\": \"IFATCLee3440\",\n            \"virtualOrganization\": null,\n            \"airportName\": null,\n            \"type\": 6,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:11:36Z\"\n        },\n        {\n            \"frequencyId\": \"38859402-0476-d410-7d56-a24b41c619e9\",\n            \"userId\": \"a60a6497-f2c9-4b9d-855e-998f423ac4eb\",\n            \"username\": \"lucasspotter\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"KLAS\",\n            \"type\": 0,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:19:58Z\"\n        },\n        {\n            \"frequencyId\": \"db549321-7b05-0a9a-ac04-5043af256eb4\",\n            \"userId\": \"a60a6497-f2c9-4b9d-855e-998f423ac4eb\",\n            \"username\": \"lucasspotter\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"KLAS\",\n            \"type\": 1,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:19:58Z\"\n        },\n        {\n            \"frequencyId\": \"3ad3e15d-cfac-740a-2bba-760f02847dc0\",\n            \"userId\": \"a60a6497-f2c9-4b9d-855e-998f423ac4eb\",\n            \"username\": \"lucasspotter\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"KLAS\",\n            \"type\": 7,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:19:58Z\"\n        },\n        {\n            \"frequencyId\": \"0c5c01fc-2d9a-3bed-bcba-63915b6de3f5\",\n            \"userId\": \"c6116903-94f8-406d-9e53-9c21768bb9bf\",\n            \"username\": \"Raiii\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"WIII\",\n            \"type\": 0,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:30:47Z\"\n        },\n        {\n            \"frequencyId\": \"e510c9a5-7b11-9b36-7094-a76ec468cade\",\n            \"userId\": \"c6116903-94f8-406d-9e53-9c21768bb9bf\",\n            \"username\": \"Raiii\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"WIII\",\n            \"type\": 1,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:30:47Z\"\n        },\n        {\n            \"frequencyId\": \"616bfef8-1716-ad3b-a0ab-6e42e6a449c7\",\n            \"userId\": \"c6116903-94f8-406d-9e53-9c21768bb9bf\",\n            \"username\": \"Raiii\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"WIII\",\n            \"type\": 7,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:30:47Z\"\n        },\n        {\n            \"frequencyId\": \"3e1cab03-feb1-5027-bd8e-f7a9617f2498\",\n            \"userId\": \"def515f2-90c8-42fd-8465-f2a0c249f19a\",\n            \"username\": \"Itszvinyy\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"EIDW\",\n            \"type\": 1,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:38:04Z\"\n        },\n        {\n            \"frequencyId\": \"302d866c-00e7-c6cd-2b62-ec3876ffc066\",\n            \"userId\": \"def515f2-90c8-42fd-8465-f2a0c249f19a\",\n            \"username\": \"Itszvinyy\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"EIDW\",\n            \"type\": 7,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:38:04Z\"\n        },\n        {\n            \"frequencyId\": \"c74874c9-bc3a-e78d-19b4-16f7e42a3cc0\",\n            \"userId\": \"10d2e526-be2c-4746-adf5-e26f54a31994\",\n            \"username\": \"Testpilot\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"VABB\",\n            \"type\": 0,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:47:37Z\"\n        },\n        {\n            \"frequencyId\": \"9f842229-77ab-f643-4e14-29edffc8e2ea\",\n            \"userId\": \"10d2e526-be2c-4746-adf5-e26f54a31994\",\n            \"username\": \"Testpilot\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"VABB\",\n            \"type\": 1,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:47:37Z\"\n        },\n        {\n            \"frequencyId\": \"2b4669cc-addf-87f2-1917-12fef0c627c8\",\n            \"userId\": \"10d2e526-be2c-4746-adf5-e26f54a31994\",\n            \"username\": \"Testpilot\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"VABB\",\n            \"type\": 7,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:47:37Z\"\n        },\n        {\n            \"frequencyId\": \"08c29e36-4cfb-4253-668c-4dd805d5d0be\",\n            \"userId\": \"08ebc6f1-1c89-4786-8af1-ffd30c33288b\",\n            \"username\": \"Anikeith_Kumar\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"KMIA\",\n            \"type\": 0,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:55:37Z\"\n        },\n        {\n            \"frequencyId\": \"6246f0b1-67eb-cef0-bcd3-298c1428d13d\",\n            \"userId\": \"08ebc6f1-1c89-4786-8af1-ffd30c33288b\",\n            \"username\": \"Anikeith_Kumar\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"KMIA\",\n            \"type\": 1,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:55:37Z\"\n        },\n        {\n            \"frequencyId\": \"e52cd96a-4aa8-c8d8-57bd-6263f9537e58\",\n            \"userId\": \"08ebc6f1-1c89-4786-8af1-ffd30c33288b\",\n            \"username\": \"Anikeith_Kumar\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"KMIA\",\n            \"type\": 7,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:55:37Z\"\n        },\n        {\n            \"frequencyId\": \"ca1e8b14-efa2-6a7e-7474-d2abef81ce47\",\n            \"userId\": \"8791aae7-cb95-45ca-9c88-af54912816a5\",\n            \"username\": \"Abhay_Bharadwaj.R\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"VOBL\",\n            \"type\": 0,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:58:48Z\"\n        },\n        {\n            \"frequencyId\": \"8ffe1ee4-59c4-f045-a169-4f446af40b44\",\n            \"userId\": \"8791aae7-cb95-45ca-9c88-af54912816a5\",\n            \"username\": \"Abhay_Bharadwaj.R\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"VOBL\",\n            \"type\": 1,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:58:48Z\"\n        },\n        {\n            \"frequencyId\": \"d044ff96-bda3-222e-6f85-d9591a728c15\",\n            \"userId\": \"8791aae7-cb95-45ca-9c88-af54912816a5\",\n            \"username\": \"Abhay_Bharadwaj.R\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"VOBL\",\n            \"type\": 7,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:58:48Z\"\n        }\n    ]\n}"
+				}
+			]
 		},
 		{
 			"name": "Get Detailed Flight Plan",
@@ -1700,228 +1929,6 @@
 					"cookie": [],
 					"responseTime": null,
 					"body": "{\n    \"errorCode\": 0,\n    \"result\": [\n        {\n            \"id\": \"9d9373fb-3eb9-4799-bbf9-db73c23278e3\",\n            \"title\": \"RUNWAY CLOSURE\",\n            \"author\": \"Infinite Flight\",\n            \"type\": 0,\n            \"sessionId\": null,\n            \"worldType\": 3,\n            \"radius\": 5,\n            \"message\": \"LTFE RUNWAY 11R/29L CLOSED AND MAY BE USED AS A TAXIWAY. \",\n            \"longitude\": 27.665388107299805,\n            \"latitude\": 37.251075744628906,\n            \"icao\": \"LTFE\",\n            \"floor\": 0,\n            \"ceiling\": 10000,\n            \"startTime\": \"2024-10-03T05:16:23.237Z\",\n            \"endTime\": \"2031-10-03T05:16:23.237Z\"\n        },\n        {\n            \"id\": \"27d72d07-0523-44d0-83ce-14ba0740d23f\",\n            \"title\": \"Runway Closure\",\n            \"author\": \"Infinite Flight\",\n            \"type\": 0,\n            \"sessionId\": \"df2a8d19-3a54-4ce5-ae65-0b722186e44c\",\n            \"worldType\": 3,\n            \"radius\": 2,\n            \"message\": \"RWY 10/28 CLOSED. RWY 10/28 to be used as taxiway ONLY.\",\n            \"longitude\": -73.74246258544021,\n            \"latitude\": 45.46747622769084,\n            \"icao\": \"CYUL\",\n            \"floor\": 0,\n            \"ceiling\": 10000,\n            \"startTime\": \"2024-01-12T14:22:41.296Z\",\n            \"endTime\": \"2026-07-31T13:22:00Z\"\n        },\n        {\n            \"id\": \"aaeffc68-6c3b-4ffb-b762-c299fbbc79c1\",\n            \"title\": \"Runway Closure \",\n            \"author\": \"Infinite Flight\",\n            \"type\": 0,\n            \"sessionId\": \"df2a8d19-3a54-4ce5-ae65-0b722186e44c\",\n            \"worldType\": 3,\n            \"radius\": 10,\n            \"message\": \"UAAA runway 23R/5L closed. Runway may be used for taxi operations without ATC runway clearance. \",\n            \"longitude\": 77.03114771110229,\n            \"latitude\": 43.350403796690514,\n            \"icao\": \"UAAA\",\n            \"floor\": 0,\n            \"ceiling\": 10000,\n            \"startTime\": \"2023-12-08T14:20:08.736Z\",\n            \"endTime\": \"2025-03-31T13:20:00Z\"\n        },\n        {\n            \"id\": \"9caa38c0-f307-45fb-8aff-c0f9fbe4cc62\",\n            \"title\": \"Aircraft Size Restriction\",\n            \"author\": \"Infinite Flight\",\n            \"type\": 0,\n            \"sessionId\": \"df2a8d19-3a54-4ce5-ae65-0b722186e44c\",\n            \"worldType\": 3,\n            \"radius\": 5,\n            \"message\": \"Aircraft size restriction in effect. GA aircraft ONLY. All larger aircraft MUST divert.\",\n            \"longitude\": -63.2205696105957,\n            \"latitude\": 17.645374298095703,\n            \"icao\": \"TNCS\",\n            \"floor\": 0,\n            \"ceiling\": 10000,\n            \"startTime\": \"2023-06-05T12:19:38.894Z\",\n            \"endTime\": \"2027-01-30T13:19:00Z\"\n        },\n        {\n            \"id\": \"f3195e00-1333-48a3-9838-de524377c5b7\",\n            \"title\": \"RWY Closure\",\n            \"author\": \"Infinite Flight\",\n            \"type\": 0,\n            \"sessionId\": \"df2a8d19-3a54-4ce5-ae65-0b722186e44c\",\n            \"worldType\": 3,\n            \"radius\": 10,\n            \"message\": \"RWY 07L/25R CLOSED. RWY07L/25R to be used as taxiway ONLY.\",\n            \"longitude\": 38.799302101135254,\n            \"latitude\": 8.977924585342407,\n            \"icao\": \"HAAB\",\n            \"floor\": 0,\n            \"ceiling\": 10000,\n            \"startTime\": \"2022-06-14T12:56:10.74Z\",\n            \"endTime\": \"2026-04-30T12:56:00Z\"\n        },\n        {\n            \"id\": \"cc23a641-0862-45c2-a940-aa78f0d88664\",\n            \"title\": \"Special Airport Procedures\",\n            \"author\": \"Infinite Flight\",\n            \"type\": 0,\n            \"sessionId\": \"df2a8d19-3a54-4ce5-ae65-0b722186e44c\",\n            \"worldType\": 3,\n            \"radius\": 3,\n            \"message\": \"Special Airport Procedures in Effect due terrain - Straight in approach RWY13 not authorized. For RWY13 Approach - CC NDB at 4500ft. Track 040° from CC NDB to SC NDB. Do not descend below 2000ft until crossing RW NDB 7NM. Visual right turn abeam checkerboard to RWY13. Published Approach Procedures (Found Online) Recommended.\\n\\nInbound/outbound flights between VHHH-VHHX not authorized. \",\n            \"longitude\": 114.20680199460077,\n            \"latitude\": 22.31646633312086,\n            \"icao\": \"VHHX\",\n            \"floor\": 0,\n            \"ceiling\": 10000,\n            \"startTime\": \"2022-02-14T16:34:14.916Z\",\n            \"endTime\": \"2100-01-01T16:34:00Z\"\n        },\n        {\n            \"id\": \"1849c298-d65a-4ebe-9cbd-9b6cc7d7560a\",\n            \"title\": \"Aircraft Restriction\",\n            \"author\": \"Infinite Flight\",\n            \"type\": 0,\n            \"sessionId\": \"7e5dcd44-1fb5-49cc-bc2c-a9aab1f6a856\",\n            \"worldType\": null,\n            \"radius\": 10,\n            \"message\": \"Aircraft larger than A321/B757 not authorized. Larger aircraft MUST divert.\",\n            \"longitude\": -87.21740341186523,\n            \"latitude\": 14.060250759124756,\n            \"icao\": \"MHTG\",\n            \"floor\": 0,\n            \"ceiling\": 10000,\n            \"startTime\": \"2021-06-05T17:30:37.886Z\",\n            \"endTime\": \"2025-03-24T17:30:00Z\"\n        },\n        {\n            \"id\": \"644d63fd-1da2-49bb-bdf5-f3a139359754\",\n            \"title\": \"Aircraft Restriction\",\n            \"author\": \"Infinite Flight\",\n            \"type\": 0,\n            \"sessionId\": \"df2a8d19-3a54-4ce5-ae65-0b722186e44c\",\n            \"worldType\": 3,\n            \"radius\": 10,\n            \"message\": \"Aircraft larger than A321/B757 not authorized. Larger aircraft MUST divert.\",\n            \"longitude\": -87.21740341186523,\n            \"latitude\": 14.060250759124756,\n            \"icao\": \"MHTG\",\n            \"floor\": 0,\n            \"ceiling\": 10000,\n            \"startTime\": \"2021-06-05T17:30:37.886Z\",\n            \"endTime\": \"2025-03-24T17:30:00Z\"\n        },\n        {\n            \"id\": \"db45b45f-cd2a-4440-81ba-ceaf960d65f0\",\n            \"title\": \"RWY Closure and Aircraft Restriction\",\n            \"author\": \"Infinite Flight\",\n            \"type\": 0,\n            \"sessionId\": \"df2a8d19-3a54-4ce5-ae65-0b722186e44c\",\n            \"worldType\": 3,\n            \"radius\": 5,\n            \"message\": \"RWY 02L/20R CLOSED. RWY 02L/20R to be used as taxiway ONLY.\\n\\nAircraft larger than A320/B737 series not authorized. Larger aircraft MUST divert. \",\n            \"longitude\": -43.16319942474365,\n            \"latitude\": -22.91043519973755,\n            \"icao\": \"SBRJ\",\n            \"floor\": 0,\n            \"ceiling\": 10000,\n            \"startTime\": \"2021-05-28T20:02:43.424Z\",\n            \"endTime\": \"2047-11-30T21:02:00Z\"\n        },\n        {\n            \"id\": \"3148911d-56ab-43ab-887b-932876a83aab\",\n            \"title\": \"Aircraft Restriction\",\n            \"author\": \"Infinite Flight\",\n            \"type\": 0,\n            \"sessionId\": \"df2a8d19-3a54-4ce5-ae65-0b722186e44c\",\n            \"worldType\": 3,\n            \"radius\": 5,\n            \"message\": \"Aircraft larger than Dash-8 Q400 not authorized. Jet traffic not authorized. Larger aircraft MUST divert.\",\n            \"longitude\": -79.3947525024414,\n            \"latitude\": 43.6288480758667,\n            \"icao\": \"CYTZ\",\n            \"floor\": 0,\n            \"ceiling\": 10000,\n            \"startTime\": \"2000-01-01T06:00:00Z\",\n            \"endTime\": \"2100-01-01T06:00:00Z\"\n        },\n        {\n            \"id\": \"da73ee29-9eb6-437f-85de-c0eeaa91ec78\",\n            \"title\": \"RWY Closure\",\n            \"author\": \"Infinite Flight\",\n            \"type\": 0,\n            \"sessionId\": \"df2a8d19-3a54-4ce5-ae65-0b722186e44c\",\n            \"worldType\": 3,\n            \"radius\": 10,\n            \"message\": \"RWY 16R/34L CLOSED. RWY16R/34L to be used as taxiway ONLY. \",\n            \"longitude\": 27.154999999999998,\n            \"latitude\": 38.28916666666667,\n            \"icao\": \"LTBJ\",\n            \"floor\": 0,\n            \"ceiling\": 10000,\n            \"startTime\": \"2000-01-01T06:00:00Z\",\n            \"endTime\": \"2100-01-01T06:00:00Z\"\n        },\n        {\n            \"id\": \"d25bb8f5-1358-4b1e-a6df-59322bc77271\",\n            \"title\": \"Aircraft Restriction\",\n            \"author\": \"Infinite Flight\",\n            \"type\": 0,\n            \"sessionId\": \"df2a8d19-3a54-4ce5-ae65-0b722186e44c\",\n            \"worldType\": 3,\n            \"radius\": 5,\n            \"message\": \"Aircraft larger than A321/B757 not authorized. Larger aircraft MUST divert.\",\n            \"longitude\": -73.8725111111111,\n            \"latitude\": 40.777225,\n            \"icao\": \"KLGA\",\n            \"floor\": 0,\n            \"ceiling\": 10000,\n            \"startTime\": \"2000-01-01T06:00:00Z\",\n            \"endTime\": \"2100-01-01T06:00:00Z\"\n        },\n        {\n            \"id\": \"66220a74-cd15-4106-94e0-2fce89eb0d90\",\n            \"title\": \"RWY Closure\",\n            \"author\": \"Infinite Flight \",\n            \"type\": 0,\n            \"sessionId\": \"df2a8d19-3a54-4ce5-ae65-0b722186e44c\",\n            \"worldType\": 3,\n            \"radius\": 12,\n            \"message\": \"RWY 09L/27R CLOSED. RWY 09L/27R to be used as taxiway ONLY.\",\n            \"longitude\": 78.42644,\n            \"latitude\": 17.23328,\n            \"icao\": \"VOHS\",\n            \"floor\": 0,\n            \"ceiling\": 10000,\n            \"startTime\": \"2020-04-02T15:02:31Z\",\n            \"endTime\": \"2031-04-16T22:17:21.899Z\"\n        },\n        {\n            \"id\": \"11f1deaa-9b94-4b7d-866f-56e98a13a5aa\",\n            \"title\": \"Aircraft Restriction\",\n            \"author\": \"Infinite Flight\",\n            \"type\": 0,\n            \"sessionId\": \"df2a8d19-3a54-4ce5-ae65-0b722186e44c\",\n            \"worldType\": 3,\n            \"radius\": 7,\n            \"message\": \"Aircraft larger than A318 not authorized to land/depart. A223, E Jets, and C130s are allowed. Larger aircraft MUST divert.\",\n            \"longitude\": 0.05521,\n            \"latitude\": 51.50523,\n            \"icao\": \"EGLC\",\n            \"floor\": 0,\n            \"ceiling\": 10000,\n            \"startTime\": \"2000-01-01T06:00:00Z\",\n            \"endTime\": \"2100-01-01T06:00:00Z\"\n        },\n        {\n            \"id\": \"77eaacbc-a0e3-4d72-91fc-f284675256ca\",\n            \"title\": \"Aircraft Restriction\",\n            \"author\": \"Infinite Flight\",\n            \"type\": 0,\n            \"sessionId\": \"df2a8d19-3a54-4ce5-ae65-0b722186e44c\",\n            \"worldType\": 3,\n            \"radius\": 12,\n            \"message\": \"Aircraft larger than A321/B757 not authorized. Larger aircraft MUST divert.\",\n            \"longitude\": -106.9145,\n            \"latitude\": 39.6426,\n            \"icao\": \"KEGE\",\n            \"floor\": 0,\n            \"ceiling\": 10000,\n            \"startTime\": \"2000-01-01T06:00:00Z\",\n            \"endTime\": \"2100-01-01T06:00:00Z\"\n        },\n        {\n            \"id\": \"9ba30995-78fc-4b9e-8f36-dd581d212056\",\n            \"title\": \"Aircraft Restriction\",\n            \"author\": \"Infinite Flight\",\n            \"type\": 0,\n            \"sessionId\": \"df2a8d19-3a54-4ce5-ae65-0b722186e44c\",\n            \"worldType\": 3,\n            \"radius\": 10,\n            \"message\": \"General Aviation aircraft ONLY. All other aircraft MUST divert. No pattern work allowed. \\n\\nAll departing aircraft must remain at the gate when ready for departure to allow space for arriving traffic to exit. Departing traffic should contact tower directly and only taxi once cleared to line up and wait or takeoff.\",\n            \"longitude\": 86.7322,\n            \"latitude\": 27.6873,\n            \"icao\": \"VNLK\",\n            \"floor\": 0,\n            \"ceiling\": 10000,\n            \"startTime\": \"2000-01-01T06:00:00Z\",\n            \"endTime\": \"2100-01-01T06:00:00Z\"\n        },\n        {\n            \"id\": \"1ae7ff80-c5f3-41ac-bd63-529d70914995\",\n            \"title\": \"Aircraft Restriction\",\n            \"author\": \"Infinite Flight\",\n            \"type\": 0,\n            \"sessionId\": \"df2a8d19-3a54-4ce5-ae65-0b722186e44c\",\n            \"worldType\": 3,\n            \"radius\": 10,\n            \"message\": \"Aircraft larger than CRJ-900 not authorized (A220 & A320/B737 series aircraft too large). Unauthorized aircraft MUST divert. \\n\\nSpecial Airport Procedures in Effect - Departures use RWY33. Standard arrivals use RWY15. RWY33 departures must turn right to a heading of 343º until at or above 9100ft or follow the procedures prescribed in appropriate SIDs to deconflict with arriving traffic landing RWY15.\\n\\nNote: General aviation aircraft may land runway 33 if standard traffic flow is not disrupted \",\n            \"longitude\": -106.8643,\n            \"latitude\": 39.2196,\n            \"icao\": \"KASE\",\n            \"floor\": 0,\n            \"ceiling\": 10000,\n            \"startTime\": \"2000-01-01T06:00:00Z\",\n            \"endTime\": \"2100-01-01T06:00:00Z\"\n        },\n        {\n            \"id\": \"d7780a3b-58c9-42e5-ba1f-40bacb6e7b2f\",\n            \"title\": \"RWY Closure\",\n            \"author\": \"Infinite Flight\",\n            \"type\": 0,\n            \"sessionId\": \"df2a8d19-3a54-4ce5-ae65-0b722186e44c\",\n            \"worldType\": 3,\n            \"radius\": 10,\n            \"message\": \"RWY 08L/26R CLOSED. RWY08L/26R to be used as taxiway ONLY.\",\n            \"longitude\": -0.19181,\n            \"latitude\": 51.14884,\n            \"icao\": \"EGKK\",\n            \"floor\": 0,\n            \"ceiling\": 10000,\n            \"startTime\": \"2000-01-01T06:00:00Z\",\n            \"endTime\": \"2100-01-01T06:00:00Z\"\n        },\n        {\n            \"id\": \"f2c85487-eb06-4d3b-85a2-d42502f12b93\",\n            \"title\": \"RWY Closure\",\n            \"author\": \"Infinite Flight\",\n            \"type\": 0,\n            \"sessionId\": \"df2a8d19-3a54-4ce5-ae65-0b722186e44c\",\n            \"worldType\": 3,\n            \"radius\": 10,\n            \"message\": \"RWY 12R/30L CLOSED. RWY 12R/30L to be used as taxiway ONLY.\",\n            \"longitude\": 50.63726,\n            \"latitude\": 26.26768,\n            \"icao\": \"OBBI\",\n            \"floor\": 0,\n            \"ceiling\": 10000,\n            \"startTime\": \"2000-01-01T06:00:00Z\",\n            \"endTime\": \"2100-01-01T06:00:00Z\"\n        }\n    ]\n}"
-				}
-			]
-		},
-		{
-			"name": "Get Active ATC Frequencies",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Response status code is 200\", function () {",
-							"  pm.response.to.have.status(200);",
-							"});",
-							"",
-							"",
-							"pm.test(\"Content type is application/json\", function () {",
-							"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
-							"});",
-							"",
-							"",
-							"pm.test(\"Result array is present and contains expected number of elements\", function () {",
-							"    const responseData = pm.response.json();",
-							"    ",
-							"    pm.expect(responseData).to.be.an('object');",
-							"    pm.expect(responseData.result).to.exist.and.to.be.an('array');",
-							"    pm.expect(responseData.result).to.have.lengthOf(1);",
-							"});",
-							"",
-							"",
-							"pm.test(\"Validate the required fields in 'result' array\", function () {",
-							"    const responseData = pm.response.json();",
-							"    ",
-							"    pm.expect(responseData.result).to.be.an('array');",
-							"    responseData.result.forEach(function(session) {",
-							"        pm.expect(session).to.include.all.keys('frequencyId', 'userId', 'username', 'airportName', 'type', 'latitude', 'longitude', 'startTime');",
-							"    });",
-							"});",
-							"",
-							"",
-							"pm.test(\"Latitude and longitude are in valid format and within the expected range\", function () {",
-							"  const responseData = pm.response.json();",
-							"  ",
-							"  pm.expect(responseData).to.be.an('object');",
-							"  ",
-							"  responseData.result.forEach(function(session) {",
-							"    pm.expect(session.latitude).to.be.a('number', \"Latitude should be a number\");",
-							"    pm.expect(session.longitude).to.be.a('number', \"Longitude should be a number\");",
-							"    pm.expect(session.latitude).to.be.at.least(-90).and.to.be.at.most(90, \"Latitude should be within -90 to 90 degrees\");",
-							"    pm.expect(session.longitude).to.be.at.least(-180).and.to.be.at.most(180, \"Longitude should be within -180 to 180 degrees\");",
-							"  });",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"id": "01B6E241-AE90-4122-9CF0-52D8F6773D87",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"value": "Bearer {{infiniteAuth}}",
-						"type": "text",
-						"key": "Authorization"
-					}
-				],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": []
-				},
-				"url": "{{baseURL}}/sessions/{{infiniteExpert}}/atc"
-			},
-			"response": [
-				{
-					"id": "5dd77e22-c972-4c81-88ce-fa59811924f5",
-					"name": "Get Active ATC Frequencies",
-					"originalRequest": {
-						"method": "GET",
-						"header": [
-							{
-								"value": "Bearer {{infiniteAuth}}",
-								"type": "text",
-								"key": "Authorization"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": []
-						},
-						"url": "{{baseURL}}/sessions/{{infiniteExpert}}/atc"
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Date",
-							"value": "Wed, 08 Mar 2023 17:26:53 GMT"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Transfer-Encoding",
-							"value": "chunked"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "x-rate-limit-limit",
-							"value": "1m"
-						},
-						{
-							"key": "x-rate-limit-remaining",
-							"value": "99"
-						},
-						{
-							"key": "x-rate-limit-reset",
-							"value": "2023-03-08T17:27:00.0000000Z"
-						},
-						{
-							"key": "CF-Cache-Status",
-							"value": "DYNAMIC"
-						},
-						{
-							"key": "Server",
-							"value": "cloudflare"
-						},
-						{
-							"key": "CF-RAY",
-							"value": "7a4cc9289ba8233c-ORD"
-						},
-						{
-							"key": "Content-Encoding",
-							"value": "gzip"
-						}
-					],
-					"cookie": [],
-					"responseTime": null,
-					"body": "{\n    \"errorCode\": 0,\n    \"result\": [\n        {\n            \"frequencyId\": \"3adee95b-1837-8992-b906-30db932af9fd\",\n            \"userId\": \"86cd9157-5c5b-49ab-8d4b-9baa5aacf2bd\",\n            \"username\": \"David_ZGGG\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"GCLP\",\n            \"type\": 4,\n            \"latitude\": 27.93156,\n            \"longitude\": -15.385593,\n            \"startTime\": \"2023-03-08 17:00:48Z\"\n        },\n        {\n            \"frequencyId\": \"b12ac40c-0ee6-e00c-03cd-3152611ef2e1\",\n            \"userId\": \"4ca88a2f-37a3-43b2-a064-5a6627d96968\",\n            \"username\": \"apple\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"GCLP\",\n            \"type\": 0,\n            \"latitude\": 27.93156,\n            \"longitude\": -15.385593,\n            \"startTime\": \"2023-03-08 17:11:41Z\"\n        },\n        {\n            \"frequencyId\": \"41c4a702-7d6b-8010-dc5f-811f58a158ad\",\n            \"userId\": \"4ca88a2f-37a3-43b2-a064-5a6627d96968\",\n            \"username\": \"apple\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"GCLP\",\n            \"type\": 1,\n            \"latitude\": 27.93156,\n            \"longitude\": -15.385593,\n            \"startTime\": \"2023-03-08 17:11:41Z\"\n        },\n        {\n            \"frequencyId\": \"6af0acaa-6be9-d24d-f2a9-276467460978\",\n            \"userId\": \"dfe4b39b-f884-4c3c-9283-936098f4d8b7\",\n            \"username\": \"Elias_Solberg1\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"FAOR\",\n            \"type\": 0,\n            \"latitude\": -26.138588,\n            \"longitude\": 28.246487,\n            \"startTime\": \"2023-03-08 17:26:41Z\"\n        },\n        {\n            \"frequencyId\": \"2630b729-4d36-4f4c-35a3-df68b2d2e83b\",\n            \"userId\": \"dfe4b39b-f884-4c3c-9283-936098f4d8b7\",\n            \"username\": \"Elias_Solberg1\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"FAOR\",\n            \"type\": 1,\n            \"latitude\": -26.138588,\n            \"longitude\": 28.246487,\n            \"startTime\": \"2023-03-08 17:26:41Z\"\n        }\n    ]\n}"
-				},
-				{
-					"id": "f5329652-86c0-4839-96a2-1eba680f0ad0",
-					"name": "Get Active ATC Frequencies",
-					"originalRequest": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{infiniteAuth}}",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": []
-						},
-						"url": "{{baseURL}}/sessions/{{infiniteExpert}}/atc"
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Date",
-							"value": "Fri, 13 Dec 2024 16:58:54 GMT"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Transfer-Encoding",
-							"value": "chunked"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "x-rate-limit-limit",
-							"value": "1m"
-						},
-						{
-							"key": "x-rate-limit-remaining",
-							"value": "97"
-						},
-						{
-							"key": "x-rate-limit-reset",
-							"value": "2024-12-13T16:59:00.0000000Z"
-						},
-						{
-							"key": "strict-transport-security",
-							"value": "max-age=31536000; includeSubDomains"
-						},
-						{
-							"key": "CF-Cache-Status",
-							"value": "DYNAMIC"
-						},
-						{
-							"key": "Server",
-							"value": "cloudflare"
-						},
-						{
-							"key": "CF-RAY",
-							"value": "8f17806a4b0c8716-ORD"
-						},
-						{
-							"key": "Content-Encoding",
-							"value": "br"
-						},
-						{
-							"key": "alt-svc",
-							"value": "h3=\":443\"; ma=86400"
-						}
-					],
-					"cookie": [],
-					"responseTime": null,
-					"body": "{\n    \"errorCode\": 0,\n    \"result\": [\n        {\n            \"frequencyId\": \"534d7acb-5a65-f1f4-c3cd-5681997b73fc\",\n            \"userId\": \"d7c2620d-8947-4d0b-af90-8b7a59b8fd66\",\n            \"username\": \"RLX_dante\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"CYYZ\",\n            \"type\": 0,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 15:03:09Z\"\n        },\n        {\n            \"frequencyId\": \"da0f16c0-28d2-7bb5-7734-4bbb8330249c\",\n            \"userId\": \"d7c2620d-8947-4d0b-af90-8b7a59b8fd66\",\n            \"username\": \"RLX_dante\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"CYYZ\",\n            \"type\": 1,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 15:03:09Z\"\n        },\n        {\n            \"frequencyId\": \"31b4394f-b2af-cf59-55fd-4a3a4a42ddf6\",\n            \"userId\": \"d7c2620d-8947-4d0b-af90-8b7a59b8fd66\",\n            \"username\": \"RLX_dante\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"CYYZ\",\n            \"type\": 7,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 15:03:09Z\"\n        },\n        {\n            \"frequencyId\": \"d72a06ed-a2ad-089d-581c-9271365c3572\",\n            \"userId\": \"32d1dcfe-dd34-4839-8e32-816dbad65d29\",\n            \"username\": \"MikaL\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"EIDW\",\n            \"type\": 0,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 15:37:14Z\"\n        },\n        {\n            \"frequencyId\": \"b6b55218-34da-166c-3cca-01695d03502e\",\n            \"userId\": \"ab570f53-eb6b-4f23-8d55-4429328c6119\",\n            \"username\": \"RyanR\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"EGLL\",\n            \"type\": 0,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 15:38:32Z\"\n        },\n        {\n            \"frequencyId\": \"ff252f81-4080-136c-4c4d-ee30ac2a03c5\",\n            \"userId\": \"ab570f53-eb6b-4f23-8d55-4429328c6119\",\n            \"username\": \"RyanR\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"EGLL\",\n            \"type\": 1,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 15:38:32Z\"\n        },\n        {\n            \"frequencyId\": \"5a58691c-a451-261b-d51c-fb5be26f99e3\",\n            \"userId\": \"ab570f53-eb6b-4f23-8d55-4429328c6119\",\n            \"username\": \"RyanR\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"EGLL\",\n            \"type\": 7,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 15:38:32Z\"\n        },\n        {\n            \"frequencyId\": \"32fed91f-ab95-345a-f909-8cfe7e15f31d\",\n            \"userId\": \"8ddfb84e-9613-4400-994c-5bf9d38a571f\",\n            \"username\": \"Syjalo\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"EGCC\",\n            \"type\": 0,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 15:57:37Z\"\n        },\n        {\n            \"frequencyId\": \"76d2ee56-28b3-8e78-ebc2-0643942488c8\",\n            \"userId\": \"8ddfb84e-9613-4400-994c-5bf9d38a571f\",\n            \"username\": \"Syjalo\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"EGCC\",\n            \"type\": 1,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 15:57:37Z\"\n        },\n        {\n            \"frequencyId\": \"99b085cd-0b1e-2087-d7c1-3e0807c5bd68\",\n            \"userId\": \"8ddfb84e-9613-4400-994c-5bf9d38a571f\",\n            \"username\": \"Syjalo\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"EGCC\",\n            \"type\": 7,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 15:57:37Z\"\n        },\n        {\n            \"frequencyId\": \"949b01fe-c500-ae57-a70a-79768ecdd5c8\",\n            \"userId\": \"d299f4ab-c119-4ef3-896a-fb8c23482b36\",\n            \"username\": \"Adii\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"EIDW\",\n            \"type\": 4,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:01:17Z\"\n        },\n        {\n            \"frequencyId\": \"ab2e6c5e-aa05-e656-0441-0636858d5fdc\",\n            \"userId\": \"b472ce64-85a9-4725-ba6c-c1acb8b3a325\",\n            \"username\": \"MJP_27\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"KMCO\",\n            \"type\": 0,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:03:06Z\"\n        },\n        {\n            \"frequencyId\": \"3d84fe81-45c9-2499-13f2-5e4506b822a0\",\n            \"userId\": \"b472ce64-85a9-4725-ba6c-c1acb8b3a325\",\n            \"username\": \"MJP_27\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"KMCO\",\n            \"type\": 1,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:03:06Z\"\n        },\n        {\n            \"frequencyId\": \"66b66963-6925-0c99-2a94-cc248d9d6a7d\",\n            \"userId\": \"b472ce64-85a9-4725-ba6c-c1acb8b3a325\",\n            \"username\": \"MJP_27\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"KMCO\",\n            \"type\": 7,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:03:06Z\"\n        },\n        {\n            \"frequencyId\": \"685eec70-975a-2211-1cb9-10eefeaad8d0\",\n            \"userId\": \"908fa721-8e74-4407-b6a4-e3e617789514\",\n            \"username\": \"Albo_DUS\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"EDDF\",\n            \"type\": 0,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:03:20Z\"\n        },\n        {\n            \"frequencyId\": \"25b4fdc6-0717-b11c-2d1e-7d79bcd870d7\",\n            \"userId\": \"908fa721-8e74-4407-b6a4-e3e617789514\",\n            \"username\": \"Albo_DUS\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"EDDF\",\n            \"type\": 1,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:03:20Z\"\n        },\n        {\n            \"frequencyId\": \"edd80d95-d9f2-bc94-5619-88e6b7a29dca\",\n            \"userId\": \"908fa721-8e74-4407-b6a4-e3e617789514\",\n            \"username\": \"Albo_DUS\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"EDDF\",\n            \"type\": 7,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:03:20Z\"\n        },\n        {\n            \"frequencyId\": \"f44c08c0-45bf-6108-5982-16e6c603f35b\",\n            \"userId\": \"0c326e97-ee4c-4246-9588-11b87f1bed9f\",\n            \"username\": \"IFATCLee3440\",\n            \"virtualOrganization\": null,\n            \"airportName\": null,\n            \"type\": 6,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:11:36Z\"\n        },\n        {\n            \"frequencyId\": \"e5158f5f-137e-4d2a-208d-ca270bdbf1b4\",\n            \"userId\": \"0c326e97-ee4c-4246-9588-11b87f1bed9f\",\n            \"username\": \"IFATCLee3440\",\n            \"virtualOrganization\": null,\n            \"airportName\": null,\n            \"type\": 6,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:11:36Z\"\n        },\n        {\n            \"frequencyId\": \"38859402-0476-d410-7d56-a24b41c619e9\",\n            \"userId\": \"a60a6497-f2c9-4b9d-855e-998f423ac4eb\",\n            \"username\": \"lucasspotter\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"KLAS\",\n            \"type\": 0,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:19:58Z\"\n        },\n        {\n            \"frequencyId\": \"db549321-7b05-0a9a-ac04-5043af256eb4\",\n            \"userId\": \"a60a6497-f2c9-4b9d-855e-998f423ac4eb\",\n            \"username\": \"lucasspotter\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"KLAS\",\n            \"type\": 1,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:19:58Z\"\n        },\n        {\n            \"frequencyId\": \"3ad3e15d-cfac-740a-2bba-760f02847dc0\",\n            \"userId\": \"a60a6497-f2c9-4b9d-855e-998f423ac4eb\",\n            \"username\": \"lucasspotter\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"KLAS\",\n            \"type\": 7,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:19:58Z\"\n        },\n        {\n            \"frequencyId\": \"0c5c01fc-2d9a-3bed-bcba-63915b6de3f5\",\n            \"userId\": \"c6116903-94f8-406d-9e53-9c21768bb9bf\",\n            \"username\": \"Raiii\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"WIII\",\n            \"type\": 0,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:30:47Z\"\n        },\n        {\n            \"frequencyId\": \"e510c9a5-7b11-9b36-7094-a76ec468cade\",\n            \"userId\": \"c6116903-94f8-406d-9e53-9c21768bb9bf\",\n            \"username\": \"Raiii\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"WIII\",\n            \"type\": 1,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:30:47Z\"\n        },\n        {\n            \"frequencyId\": \"616bfef8-1716-ad3b-a0ab-6e42e6a449c7\",\n            \"userId\": \"c6116903-94f8-406d-9e53-9c21768bb9bf\",\n            \"username\": \"Raiii\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"WIII\",\n            \"type\": 7,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:30:47Z\"\n        },\n        {\n            \"frequencyId\": \"3e1cab03-feb1-5027-bd8e-f7a9617f2498\",\n            \"userId\": \"def515f2-90c8-42fd-8465-f2a0c249f19a\",\n            \"username\": \"Itszvinyy\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"EIDW\",\n            \"type\": 1,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:38:04Z\"\n        },\n        {\n            \"frequencyId\": \"302d866c-00e7-c6cd-2b62-ec3876ffc066\",\n            \"userId\": \"def515f2-90c8-42fd-8465-f2a0c249f19a\",\n            \"username\": \"Itszvinyy\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"EIDW\",\n            \"type\": 7,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:38:04Z\"\n        },\n        {\n            \"frequencyId\": \"c74874c9-bc3a-e78d-19b4-16f7e42a3cc0\",\n            \"userId\": \"10d2e526-be2c-4746-adf5-e26f54a31994\",\n            \"username\": \"Testpilot\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"VABB\",\n            \"type\": 0,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:47:37Z\"\n        },\n        {\n            \"frequencyId\": \"9f842229-77ab-f643-4e14-29edffc8e2ea\",\n            \"userId\": \"10d2e526-be2c-4746-adf5-e26f54a31994\",\n            \"username\": \"Testpilot\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"VABB\",\n            \"type\": 1,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:47:37Z\"\n        },\n        {\n            \"frequencyId\": \"2b4669cc-addf-87f2-1917-12fef0c627c8\",\n            \"userId\": \"10d2e526-be2c-4746-adf5-e26f54a31994\",\n            \"username\": \"Testpilot\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"VABB\",\n            \"type\": 7,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:47:37Z\"\n        },\n        {\n            \"frequencyId\": \"08c29e36-4cfb-4253-668c-4dd805d5d0be\",\n            \"userId\": \"08ebc6f1-1c89-4786-8af1-ffd30c33288b\",\n            \"username\": \"Anikeith_Kumar\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"KMIA\",\n            \"type\": 0,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:55:37Z\"\n        },\n        {\n            \"frequencyId\": \"6246f0b1-67eb-cef0-bcd3-298c1428d13d\",\n            \"userId\": \"08ebc6f1-1c89-4786-8af1-ffd30c33288b\",\n            \"username\": \"Anikeith_Kumar\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"KMIA\",\n            \"type\": 1,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:55:37Z\"\n        },\n        {\n            \"frequencyId\": \"e52cd96a-4aa8-c8d8-57bd-6263f9537e58\",\n            \"userId\": \"08ebc6f1-1c89-4786-8af1-ffd30c33288b\",\n            \"username\": \"Anikeith_Kumar\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"KMIA\",\n            \"type\": 7,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:55:37Z\"\n        },\n        {\n            \"frequencyId\": \"ca1e8b14-efa2-6a7e-7474-d2abef81ce47\",\n            \"userId\": \"8791aae7-cb95-45ca-9c88-af54912816a5\",\n            \"username\": \"Abhay_Bharadwaj.R\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"VOBL\",\n            \"type\": 0,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:58:48Z\"\n        },\n        {\n            \"frequencyId\": \"8ffe1ee4-59c4-f045-a169-4f446af40b44\",\n            \"userId\": \"8791aae7-cb95-45ca-9c88-af54912816a5\",\n            \"username\": \"Abhay_Bharadwaj.R\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"VOBL\",\n            \"type\": 1,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:58:48Z\"\n        },\n        {\n            \"frequencyId\": \"d044ff96-bda3-222e-6f85-d9591a728c15\",\n            \"userId\": \"8791aae7-cb95-45ca-9c88-af54912816a5\",\n            \"username\": \"Abhay_Bharadwaj.R\",\n            \"virtualOrganization\": null,\n            \"airportName\": \"VOBL\",\n            \"type\": 7,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"startTime\": \"2024-12-13 16:58:48Z\"\n        }\n    ]\n}"
 				}
 			]
 		},
